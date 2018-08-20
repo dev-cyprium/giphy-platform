@@ -10491,6 +10491,10 @@ a.text-dark:focus {
   margin: .5em 0;
 }
 
+.post h1 {
+  font-size: 1.4rem;
+}
+
 .responsive-image,
 .gif-holder img {
   width: 80%;
