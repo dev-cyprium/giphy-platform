@@ -13,11 +13,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-main {
-}
-
-aside {
-}
 
 .container {
   margin-top: 10em;
@@ -27,4 +22,13 @@ aside {
   margin: 2em 0;
   max-height: 20rem;
   overflow-y: scroll;
+  img {
+    @extend .responsive-image;
+    margin: .5em 0;
+  }
+}
+
+.responsive-image {
+  width: 80%;
+  height: auto;
 }

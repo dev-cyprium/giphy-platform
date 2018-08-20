@@ -7,16 +7,36 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+function formatGif(original) {
+    let replacerRegex = /^(.*)(GIF.*)$/;
+    return original.replace(replacerRegex, "$1").capitalize();
+}
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+function choose(container, data) {
+    $("#chosen-gif").html("<strong>Choosen GIF: </strong>" + formatGif(data.title));
+    $("#chosen-gif-id").val(data.id);
+}
 
-const app = new Vue({
-    el: '#app'
+function processImages(images) {
+    let container = $(".gif-holder");
+    container.html("");
+    images.forEach((data) => {
+        let img = $("<img>").attr("src", data.image.url);
+        img.click(() => choose(container, data));
+        container.append(img);
+    });
+}
+
+function processSearchGif() {
+    let term = $("#gif-search").val();
+    axios.get(`/api/giphy/${term}`).then((resp) => processImages(resp.data));
+}
+
+$(document).ready(function() {
+    $("#gif-search").on('keyup', _.debounce(processSearchGif, 250));
+    $("#gif-search").blur(processSearchGif);
 });
