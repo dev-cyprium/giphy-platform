@@ -1,13 +1,4 @@
 @guest
-@if ($errors->any())
-<div class="alert alert-danger" role="alert">
-    <ul>
-      @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-      @endforeach
-    </ul>
-</div>
-@endif
 <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
   @csrf
   <div class="form-group">
@@ -36,6 +27,7 @@
   <button type="submit" class="btn btn-primary">
       {{ __('Login') }}
   </button>
+  <a href="{{ route('register') }}"></a>
 </form>
 @else
   <h1>{{ Auth::user()->name }}</h1>
