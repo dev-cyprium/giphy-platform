@@ -35,7 +35,10 @@
   <h1>{{ Auth::user()->name }}</h1>  
   <ul>
     <li>
-      <a href='#'>My Gifs</a>
+      <a href='{{ route('posts') }}'>All Gifs</a>
+    </li>
+    <li>
+      <a href='{{ route('user-posts', Auth::user())}}'>My Gifs</a>
     </li>
     <li>
       <a href='#'>Settings</a>
