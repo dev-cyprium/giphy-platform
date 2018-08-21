@@ -39,5 +39,7 @@
 </form>
 @else
   <h1>{{ Auth::user()->name }}</h1>
-  <a href='{{ route('do-logout') }}' class="btn btn-primary">Logout</a>
+  <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-primary">Logout</a>
+
+  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
 @endauth
