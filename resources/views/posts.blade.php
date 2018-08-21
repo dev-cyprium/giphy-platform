@@ -8,7 +8,7 @@
   @foreach($posts as $r)
   <div class="card my-3 post">
       <div class="card-header d-flex">
-        <h1>{{ $r['title'] }}</h1>
+        <h1>{{ $r['giphy']['title'] }}</h1>
       <form class='ml-auto' method="POST" action="{{ route('delete-post', $r['id']) }}">
           @csrf
           {{ method_field('delete') }}

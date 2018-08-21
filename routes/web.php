@@ -14,6 +14,15 @@
 Route::get('/','PostController@index');
 Route::post('/post/create', 'PostController@store')->name('create-post');
 Route::get('/posts', 'PostController@index')->name('posts');
-Route::post('/login', 'SessionController@login')->name('do-login');
-Route::get('/logout', 'SessionController@logout')->name('do-logout');
 Route::delete('/post/{id}', 'PostController@delete')->name('delete-post');
+
+/*
+  Registration
+*/
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm');
+
+/*
+  Session routes
+*/
+Route::get('/logout', 'SessionController@logout')->name('do-logout');
+Route::post('/login', 'SessionController@login')->name('do-login');
