@@ -24,10 +24,12 @@
     @endif
   </div>
 
-  <button type="submit" class="btn btn-primary">
-      {{ __('Login') }}
-  </button>
-  <a href="{{ route('register') }}"></a>
+  <div class="d-flex">
+    <button type="submit" class="btn btn-primary">
+        {{ __('Login') }}
+    </button>
+    <a href="{{ route('register') }}" class="btn btn-primary ml-auto">Register</a>
+  </div>
 </form>
 @else
   <h1>{{ Auth::user()->name }}</h1>
