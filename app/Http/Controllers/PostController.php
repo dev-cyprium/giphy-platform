@@ -16,13 +16,11 @@ class PostController extends Controller
 
     public function index(GiphyService $service)
     {
-        $posts = Post::all()->sortByDesc('created_at');
-        $result = [];
+        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
         foreach($posts as $post) {
-            $result[] = $service->getByID($post->giphy_id);
+            $post->giphy = $service->getByID($post->giphy_id);
         }
-
-        return view("posts", compact('result'));
+        return view("posts", compact('posts'));
     }
 
     public function delete($giphy_id)
