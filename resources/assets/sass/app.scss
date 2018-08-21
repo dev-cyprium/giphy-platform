@@ -31,10 +31,20 @@
 .post {
   h1 {
     font-size: 1.4rem;
+    padding: .4em 0;
+    text-align: center;
+    flex: 1;
   }
 }
 
 .responsive-image {
   width: 80%;
   height: auto;
+}
+
+.gravatar-image {
+  border-radius: 50%;
+  width: 3rem;
+  align-self: flex-start;
+  margin: auto;
 }

@@ -13,11 +13,10 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
-        $user = factory(User::class)->create();
         foreach($this->tableData() as $giphy_id) {
             DB::table('posts')->insert([
                 "giphy_id" => $giphy_id,
-                "user_id" => $user->id,
+                "user_id" => factory(User::class)->create()->id,
                 "created_at" =>  \Carbon\Carbon::now(),
                 "updated_at" => \Carbon\Carbon::now(),
             ]);

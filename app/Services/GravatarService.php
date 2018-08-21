@@ -5,6 +5,7 @@
   class GravatarService 
   {
     private const URLBASE = "https://www.gravatar.com/avatar/";
+    private const DEFAULT = "identicon";
 
     /**
      * Returns the URL for the gravatar image
@@ -13,7 +14,7 @@
     {
       $hash = $this->mailToHash($email);
       $url  = self::URLBASE . $hash;
-      return $url;
+      return $url . "?d=" . self::DEFAULT;
     }
 
     /**

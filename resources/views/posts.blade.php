@@ -8,9 +8,9 @@
   @foreach($posts as $r)
   <div class="card my-3 post">
       <div class="card-header d-flex">
-      <img src="{{ Gravatar::get($r->user->email) }}">
+        <img class="gravatar-image" src="{{ Gravatar::get($r->user->email) }}">
         <h1>{{ $r->user->email }}</h1>
-      <form class='ml-auto' method="POST" action="{{ route('delete-post', $r['id']) }}">
+        <form class='ml-auto' method="POST" action="{{ route('delete-post', $r['id']) }}">
           @csrf
           {{ method_field('delete') }}
           @if (Auth::user() && Auth::user()->can('delete', $r))
