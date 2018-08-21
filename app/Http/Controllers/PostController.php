@@ -11,6 +11,8 @@ use Illuminate\Validation\ValidationException;
 
 class PostController extends Controller
 {
+    private const PER_PAGE = 7;
+
     public function store(Request $request)
     {
         
@@ -20,7 +22,7 @@ class PostController extends Controller
 
     public function index(GiphyService $service)
     {
-        $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(5);
+        $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(self::PER_PAGE);
         $this->addGiphyToPosts($posts, $service);
         return view("posts", compact('posts'));
     }
@@ -37,9 +39,10 @@ class PostController extends Controller
 
     public function user(User $user, GiphyService $service)
     {
-        $posts = Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->paginate(5);
+        $posts = Post::where('user_id', $user->id)->orderBy('created_at', 'desc')->paginate(self::PER_PAGE);
+        $noLinkName = true;
         $this->addGiphyToPosts($posts, $service);
-        return view("posts", compact('posts'));
+        return view("posts", compact('posts', 'noLinkName'));
     }
 
     private function addGiphyToPosts($posts, $service)
