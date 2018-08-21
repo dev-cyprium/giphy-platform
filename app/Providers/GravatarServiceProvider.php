@@ -15,7 +15,7 @@ class GravatarServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(GravatarService::class, function($app) {
+        $this->app->bind('gravatar', function() {
             return new GravatarService();
         });
       }
