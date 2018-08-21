@@ -16,7 +16,7 @@ class PostController extends Controller
 
     public function index(GiphyService $service)
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(5);
+        $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(5);
         foreach($posts as $post) {
             $post->giphy = $service->getByID($post->giphy_id);
         }
