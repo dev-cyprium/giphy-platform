@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Services\GiphyService;
 use App\Post;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
 
 class PostController extends Controller
 {
@@ -28,7 +29,10 @@ class PostController extends Controller
     public function delete($giphy_id)
     {
         $post = Post::where('giphy_id', $giphy_id)->first();
-        $post->delete();
-        return redirect('/');
+        if(Auth::user()->can('delete', $post)) {
+            $post->delete();
+            return redirect('/');
+        }
+        throw ValidationException::withMessages(["pop_message" => "Can't delete that post"]);
     }
 }

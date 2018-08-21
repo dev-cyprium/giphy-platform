@@ -13,7 +13,9 @@
       <form class='ml-auto' method="POST" action="{{ route('delete-post', $r['id']) }}">
           @csrf
           {{ method_field('delete') }}
-          <button class='btn btn-danger'>Delete</button>
+          @if (Auth::user() && Auth::user()->can('delete', $r))
+            <button class='btn btn-danger'>Delete</button>
+          @endif
         </form>
       </div>
       <div class="card-body text-center">

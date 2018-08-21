@@ -15,6 +15,12 @@
     </head>
     <body>
         <div class='container'>
+            @if($errors->has('pop_message'))
+            <div class="alert alert-danger alert-dismissible fade show">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {{ $errors->first('pop_message') }}
+            </div>
+            @endif
             <div class='row'>
                 <main role='main' class='offset-md-1 col-md-7' >
                     @yield('content')
