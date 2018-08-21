@@ -9,7 +9,7 @@
   <div class="card my-3 post">
       <div class="card-header d-flex">
         <img class="gravatar-image" src="{{ Gravatar::get($r->user->email) }}">
-        <h1>{{ $r->user->email }}</h1>
+        <h1>{{ $r->user->name }}</h1>
         <form class='ml-auto' method="POST" action="{{ route('delete-post', $r['id']) }}">
           @csrf
           {{ method_field('delete') }}
