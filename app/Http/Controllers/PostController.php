@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\GiphyService;
 use App\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
     public function store(Request $request)
     {
-        Post::create($request->all());
+        
+        Post::create(array_merge($request->all(), ['user_id' => Auth::user()->id]));
         return redirect('/');
     }
 
