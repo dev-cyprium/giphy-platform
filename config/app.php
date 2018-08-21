@@ -163,8 +163,8 @@ return [
         /*
          * Custom service providers
          */
-        App\Providers\GiphyServiceProvider::class
-
+        App\Providers\GiphyServiceProvider::class,
+        App\Providers\GravatarServiceProvider::class,
     ],
 
     /*

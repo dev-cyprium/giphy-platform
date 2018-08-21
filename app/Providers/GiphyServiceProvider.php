@@ -19,7 +19,7 @@ class GiphyServiceProvider extends ServiceProvider
             return new GiphyService();
         });
     }
-
+// TODO: skloni 
     // provider nam treba da ne bi mi istancirali Giphy svaki put kad nam treba Giphy
     // dva razloga za provider:
     // -- kada koristimo neki tudji API
