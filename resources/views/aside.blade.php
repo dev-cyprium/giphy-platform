@@ -41,7 +41,7 @@
       <a href='#'>Settings</a>
     </li>
   </ul>
-  <p>Powered by <a href='#'>Giphy</a></p>
+  <p>Powered by <a href='https://developers.giphy.com/' target="_blank">Giphy</a></p>
   <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-primary">Logout</a>
   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
 @endauth
