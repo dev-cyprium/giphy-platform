@@ -21,7 +21,7 @@
           @endif
         </h1>
         @if (Auth::user() && Auth::user()->can('delete', $r))
-          <form class='ml-auto' method="POST" action="{{ route('delete-post', $r['id']) }}">
+          <form class='ml-auto' method="POST" action="{{ route('delete-post', $r['giphy_id']) }}">
             @csrf
             {{ method_field('delete') }}
             <button class='btn btn-danger'>Delete</button>
