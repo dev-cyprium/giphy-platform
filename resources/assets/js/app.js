@@ -9,10 +9,14 @@ require('./bootstrap');
 
 let Vue = require('vue');
 
-Vue.component('example', require('./components/ExampleComponent.vue'));
+Vue.component('modal', require('./components/Modal.vue'));
+Vue.component('new-report-modal', require('./components/NewReportModal.vue'));
 
 const app = new Vue({
-    el: "#app"
+    el: "#app",
+    data: {
+        activeModal: ''
+    }
 });
 /*
     Processing for GIF choooser

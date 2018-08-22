@@ -5,7 +5,8 @@
     @include('gifs.new')
   @endauth
   
-  <example></example>
+  <new-report-modal :open-modal="activeModal" @close="activeModal = ''" ></new-report-modal>
+
   @foreach($posts as $r)
   <div class="card my-3 post">
       <div class="card-header d-flex">
@@ -19,20 +20,20 @@
             {{ $r->user->name }}
           @endif
         </h1>
-        <form class='ml-auto' method="POST" action="{{ route('delete-post', $r['id']) }}">
-          @csrf
-          {{ method_field('delete') }}
-          @if (Auth::user() && Auth::user()->can('delete', $r))
+        @if (Auth::user() && Auth::user()->can('delete', $r))
+          <form class='ml-auto' method="POST" action="{{ route('delete-post', $r['id']) }}">
+            @csrf
+            {{ method_field('delete') }}
             <button class='btn btn-danger'>Delete</button>
+          </form>
           @else
-            <a href='#' class='btn btn-warning'>Report</a>
+            <button class='btn btn-warning' @click="activeModal = 'new-report-modal'">Report</button>
           @endif
-        </form>
       </div>
       <div class="card-body text-center">
         <img class='responsive-image' src="{{ $r['giphy']['image']['url'] }}">
       </div>
     </div>
-  @endforeach
+    @endforeach 
   {{ $posts->links() }}
 @endsection
