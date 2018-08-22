@@ -1,6 +1,6 @@
 <template>
   <transition name="modal">
-    <div class="modal-mask" @click="close" v-show="show">
+    <div class="modal-mask" @click="close" v-show="opened">
         <div class="modal-container" @click.stop>
             <slot></slot>
         </div>
@@ -53,6 +53,9 @@
     margin-top: 0.5em;
 }
 
+.modal-open {
+    overflow: hidden;
+}
 
 /*
  * The following styles are auto-applied to elements with
@@ -88,7 +91,16 @@
         },
         methods: {
             close: function() {
+                $('body').removeClass('modal-open');
                 this.$emit('close');
+            }
+        },
+        computed: {
+            opened: function() {
+                if(this.show) {
+                    $('body').addClass('modal-open');
+                }
+                return this.show;
             }
         },
         mounted: function() {
