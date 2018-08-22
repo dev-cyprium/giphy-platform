@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-        <div class='container'>
+        <div class='container' id='app'>
             @if($errors->has('pop_message'))
             <div class="alert alert-danger alert-dismissible fade show">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>

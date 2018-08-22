@@ -7,6 +7,16 @@
 
 require('./bootstrap');
 
+let Vue = require('vue');
+
+Vue.component('example', require('./components/ExampleComponent.vue'));
+
+const app = new Vue({
+    el: "#app"
+});
+/*
+    Processing for GIF choooser
+*/
 String.prototype.capitalize = function() {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }

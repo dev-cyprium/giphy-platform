@@ -5,6 +5,7 @@
     @include('gifs.new')
   @endauth
   
+  <example></example>
   @foreach($posts as $r)
   <div class="card my-3 post">
       <div class="card-header d-flex">
