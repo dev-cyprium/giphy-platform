@@ -8,12 +8,12 @@
                 <label>
                     Description
                 </label>
-                <textarea @input="onInput()" v-model="description" rows="5" class="form-control"></textarea>
+                <textarea :class="[{'is-invalid': charactersLeft == 0}, 'form-control']" @input="onInput()" v-model="description" rows="5" ></textarea>
             </div>
         </div>
         <div class="modal-footer">
             <div class="w-100">
-                <p>{{ charactersLeft }}</p>
+                <p :class="{'text-danger': charactersLeft <= 10}">{{ charactersLeft }}</p>
             </div>
             <button class="btn btn-primary" :disabled="charactersUsed > maxCharacters" @click="report()">
                 Submit
@@ -22,7 +22,7 @@
     </modal>
 </template>
 
-<style>
+<style scoped>
 .modal-header h3 {
     margin-top: 0;
     color: #42b983;
