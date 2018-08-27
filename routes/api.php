@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 */
 
 Route::get('/giphy/{term}', 'GiphyController@index');
+Route::post('/report', 'ReportController@store');
