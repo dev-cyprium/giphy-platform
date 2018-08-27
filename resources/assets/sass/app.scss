@@ -5,8 +5,16 @@
 // Variables
 @import 'variables';
 
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+$theme-colors: (
+  primary: $green
+);
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
 
 .navbar-laravel {
   background-color: #fff;
