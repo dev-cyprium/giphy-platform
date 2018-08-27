@@ -50,11 +50,15 @@
         },
         methods: {
             report() {
+                axios.post('/api/report', {description: this.description})
+                    .then(resp => console.log(resp))
+                    .catch(err => console.log(err));
                 this.close();
             },
             close() {
                 this.$emit('close');
                 this.description = '';
+                this.charactersUsed = 0;
             },
             onInput() {
                 this.charactersUsed = this.description.length;
