@@ -8,8 +8,8 @@
                 <div class="card-header d-flex">
                     {{ __('forms.register') }}
                     <div class="ml-auto">
-                        <a href='?lang=en'>en</a> // 
-                        <a href='?lang=sr'>sr</a>
+                        <a href='{{ route('change-locale', 'en') }}'>en</a> // 
+                        <a href='{{ route('change-locale', 'sr') }}'>sr</a>
                     </div>
                 </div>
 
