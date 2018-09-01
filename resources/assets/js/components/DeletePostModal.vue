@@ -5,7 +5,7 @@
         </div>
         <div class="modal-body">
             <p>
-                Deleting a post permanently removes it from your post 
+                Deleting a post permanently removes it from your lists of posts.
             </p>
         </div>
         <div class="modal-footer">
