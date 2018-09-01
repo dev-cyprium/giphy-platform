@@ -72,6 +72,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('forms.register') }}
                                 </button>
+                                <a href="/" class="btn btn-primary">
+                                    {{ __('utils.home') }}
+                                </a>
                             </div>
                         </div>
                     </form>
