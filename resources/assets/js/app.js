@@ -40,16 +40,17 @@ Vue.component('new-report-modal', require('./components/NewReportModal'));
 Vue.component('giphy-panel', require('./components/GiphyPanel'));
 Vue.component('giphy-image', require('./components/GiphyImage'))
 
-axios.get('/localization').then(resp => {
-    Vue.i18n.set(resp.data.locale);
+const app = new Vue({
+    store,
+    el: "#app",
+    data: {
+        activeModal: ''
+    }
+});
 
-    const app = new Vue({
-        store,
-        el: "#app",
-        data: {
-            activeModal: ''
-        }
-    });
+Vue.i18n.set('en'); // default to english
+axios.get('/localization').then(resp => {
+    Vue.i18n.set(resp.data.locale);    
 });
 
 

@@ -36,13 +36,13 @@
     <h1>{{ Auth::user()->name }}</h1>  
     <ul>
       <li>
-        <a href='{{ route('posts') }}'>All Gifs</a>
+        <a href='{{ route('posts') }}'>{{ __('utils.all_gifs') }}</a>
       </li>
       <li>
-        <a href='{{ route('user-posts', Auth::user())}}'>My Gifs</a>
+        <a href='{{ route('user-posts', Auth::user())}}'>{{ __('utils.my_gifs') }}</a>
       </li>
       <li>
-        <a href='#'>Settings</a>
+        <a href='#'>{{ __('utils.settings') }}</a>
       </li>
     </ul>
     <p>Powered by <a href='https://developers.giphy.com/' target="_blank">Giphy</a></p>
