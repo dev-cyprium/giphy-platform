@@ -18,3 +18,4 @@ Route::get('/posts', 'PostController@index')->name('posts');
 Route::get('/posts/{user}', 'PostController@user')->name('user-posts');
 Route::delete('/post/{id}', 'PostController@delete')->name('delete-post');
 Route::get('/localization/{locale}', 'LocalizationController@change')->name('change-locale');
+Route::get('/localization', 'LocalizationController@get');

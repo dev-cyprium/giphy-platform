@@ -19,5 +19,8 @@
         "popper.js": "^1.12",
         "vue": "^2.5.7"
     },
-    "dependencies": {}
+    "dependencies": {
+        "vuex": "^3.0.1",
+        "vuex-i18n": "^1.10.5"
+    }
 }

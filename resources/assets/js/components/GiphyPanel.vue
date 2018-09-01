@@ -1,11 +1,11 @@
 <template>
   <div class="card">
     <div class="card-header">
-      I'm feeling like...
+      {{ $t('giphy.title') }}
     </div>
     <div class="card-body">
-      <h5 class="card-title">Gifonize yourself!</h5>
-      <p class="card-text">Choose a gif that represents your feelings of the moment.</p>
+      <h5 class="card-title">{{ $t('giphy.gif') }}</h5>
+      <p class="card-text">{{ $t('giphy.feeling' )}}</p>
       <input @input="doSearch">
 
       <p id='chosen-gif'></p>
