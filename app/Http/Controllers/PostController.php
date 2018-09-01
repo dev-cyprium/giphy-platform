@@ -15,6 +15,8 @@ class PostController extends Controller
 
     /*
         Handled by API call
+
+        TODO: Add validation!!
     */
     public function store(Request $request)
     {
