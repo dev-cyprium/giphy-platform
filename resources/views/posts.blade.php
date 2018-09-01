@@ -6,6 +6,7 @@
   @endauth
   
   <new-report-modal :open-modal="activeModal" @close="activeModal = ''" ></new-report-modal>
+  <delete-post-modal :open-modal="activeModal" @close="activeModal = ''"></delete-post-modal>
 
   @foreach($posts as $r)
   <div class="card my-3 post">
@@ -24,8 +25,8 @@
           <form class='ml-auto' method="POST" action="{{ route('delete-post', $r['giphy_id']) }}">
             @csrf
             {{ method_field('delete') }}
-            <button class='btn btn-danger'>Delete</button>
           </form>
+          <button class='btn btn-danger' @click="activeModal = 'delete-post-modal'">Delete</button>
           @else
             <button class='btn btn-warning' @click="activeModal = 'new-report-modal'">Report</button>
           @endif

@@ -1,0 +1,12 @@
+.form-button {
+  background: map-get($theme-colors, 'primary');
+  color: white;
+  border: none;
+  padding: .5em 1em;
+  border-radius: 5%;
+  cursor: pointer;
+  &:disabled {
+    background: lighten($color: map-get($theme-colors, 'primary'), $amount: 25%);
+    cursor: not-allowed;
+  }
+}

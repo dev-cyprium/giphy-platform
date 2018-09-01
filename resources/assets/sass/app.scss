@@ -4,14 +4,11 @@
 
 // Variables
 @import 'variables';
-
-$theme-colors: (
-  primary: $green
-);
+// Utils
+@import "utils";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
 
 
 .navbar-laravel {

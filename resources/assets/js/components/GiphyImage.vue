@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     handleImageClick() {
-      this.$emit('click', this.item);
+     this.$emit('click', this.item);
     }
   }
 }

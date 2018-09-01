@@ -7,15 +7,13 @@
       <h5 class="card-title">{{ $t('giphy.gif') }}</h5>
       <p class="card-text">{{ $t('giphy.feeling' )}}</p>
       <input @input="doSearch">
-
-      <p id='chosen-gif'></p>
-        <form @submit.prevent='handleSubmit'>
-          <p v-show='items.length > 0'>Selected image: {{ selectedImage || 'No Image selected' }}</p>
-          <button :disabled="disabled" :class="[disabled ? 'disabled':'', 'btn btn-primary']">Post</button>
-        </form>
-        <div class='gif-holder text-center' v-show="items.length > 0">
-          <giphy-image v-for="item in items" :key="item.id" :item="item" @click='handleImageSelected'></giphy-image>
-        </div>
+      <form @submit.prevent='handleSubmit'>
+        <p v-show='items.length > 0'>Selected image: {{ selectedImage || 'No Image selected' }}</p>
+        <button :disabled="!selectedId" class='form-button'>Post</button>
+      </form>
+      <div class='gif-holder text-center' v-show="items.length > 0">
+        <giphy-image v-for="item in items" :key="item.id" :item="item" @click="handleImageSelected"></giphy-image>
+      </div>
     </div>
   </div>
 </template>
@@ -26,21 +24,16 @@ export default {
     return {
       items: [],
       selectedImage: '',
-      selectedId: ''
-    }
-  },
-  computed: {
-    disabled() {
-      return this.selectedId == '' ? true : false;
+      selectedId: null
     }
   },
   methods: {
     doSearch: _.debounce(function(e) {
       axios.get(`/api/giphy/${e.target.value}`).then((resp) => this.items = resp.data);
     }, 300),
-    handleImageSelected(giphyItem) {
-      this.selectedImage = giphyItem.title;
-      this.selectedId = giphyItem.id;
+    handleImageSelected({title, id}) {
+      this.selectedImage = title;
+      this.selectedId = id;
     },
     handleSubmit() {
       if(this.selectedId !== '') {

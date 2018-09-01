@@ -37,6 +37,7 @@ Vue.i18n.add('sr', translationsSr);
 /* Components */
 Vue.component('modal', require('./components/Modal'));
 Vue.component('new-report-modal', require('./components/NewReportModal'));
+Vue.component('delete-post-modal', require('./components/DeletePostModal'));
 Vue.component('giphy-panel', require('./components/GiphyPanel'));
 Vue.component('giphy-image', require('./components/GiphyImage'))
 
