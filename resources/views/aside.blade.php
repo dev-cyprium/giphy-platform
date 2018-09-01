@@ -49,7 +49,7 @@
     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-primary">Logout</a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
   @endauth
-  <div class="mt-3">
+  <div class="mt-3 translation-control">
     <a href='{{ route('change-locale', 'en') }}'>en</a> // 
     <a href='{{ route('change-locale', 'sr') }}'>sr</a>
   </div>

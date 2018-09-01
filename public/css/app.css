@@ -10514,3 +10514,7 @@ a.text-dark:focus {
   margin: auto;
 }
 
+.translation-control {
+  font-size: 1.5rem;
+}
+
