@@ -1,9 +1,9 @@
 <div class="affix">
   @guest
-  <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+  <form method="POST" action="{{ route('login') }}" aria-label="{{ __('forms.login') }}">
     @csrf
     <div class="form-group">
-      <label for="email">{{ __('E-Mail') }}</label>
+      <label for="email">{{ __('forms.email') }}</label>
         <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
 
       @if ($errors->has('email'))
@@ -14,7 +14,7 @@
     </div>
 
     <div class="form-group">
-      <label for="password">{{ __('Password') }}</label>
+      <label for="password">{{ __('forms.password') }}</label>
 
       <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
@@ -27,9 +27,9 @@
 
     <div class="d-flex">
       <button type="submit" class="btn btn-primary">
-          {{ __('Login') }}
+          {{ __('forms.login') }}
       </button>
-      <a href="{{ route('register') }}" class="btn btn-primary ml-auto">Register</a>
+      <a href="{{ route('register') }}" class="btn btn-primary ml-auto">{{ __('forms.register') }}</a>
     </div>
   </form>
   @else
@@ -49,4 +49,8 @@
     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-primary">Logout</a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
   @endauth
+  <div class="mt-3">
+    <a href='{{ route('change-locale', 'en') }}'>en</a> // 
+    <a href='{{ route('change-locale', 'sr') }}'>sr</a>
+  </div>
 <div>

@@ -3,6 +3,7 @@
   return [
     /* Registration / Login forms */
     'register' => 'Register',
+    'login'    => 'Login',
     'name'     => 'Name',
     'email'    => 'Email',
     'password' => 'Password',
