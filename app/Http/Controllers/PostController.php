@@ -13,11 +13,12 @@ class PostController extends Controller
 {
     private const PER_PAGE = 7;
 
+    /*
+        Handled by API call
+    */
     public function store(Request $request)
     {
-        
-        Post::create(array_merge($request->all(), ['user_id' => Auth::user()->id]));
-        return redirect('/');
+        return Post::create(array_merge($request->all(), ['user_id' => Auth::user()->id]));
     }
 
     public function index(GiphyService $service)

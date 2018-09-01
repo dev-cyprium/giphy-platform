@@ -11,7 +11,7 @@
       <p id='chosen-gif'></p>
         <form @submit.prevent='handleSubmit'>
           <p v-show='items.length > 0'>Selected image: {{ selectedImage || 'No Image selected' }}</p>
-          <button :disabled="selectedId === ''" class='btn btn-primary'>Post</button>
+          <button :disabled="disabled" :class="[disabled ? 'disabled':'', 'btn btn-primary']">Post</button>
         </form>
         <div class='gif-holder text-center' v-show="items.length > 0">
           <giphy-image v-for="item in items" :key="item.id" :item="item" @click='handleImageSelected'></giphy-image>
@@ -29,6 +29,11 @@ export default {
       selectedId: ''
     }
   },
+  computed: {
+    disabled() {
+      return this.selectedId == '' ? true : false;
+    }
+  },
   methods: {
     doSearch: _.debounce(function(e) {
       axios.get(`/api/giphy/${e.target.value}`).then((resp) => this.items = resp.data);
@@ -38,7 +43,9 @@ export default {
       this.selectedId = giphyItem.id;
     },
     handleSubmit() {
-      // handle submit
+      if(this.selectedId !== '') {
+        axios.post('/api/post/create', {giphy_id: this.selectedId}).then(resp => alert('Created'));
+      }
     }
   }
 }
