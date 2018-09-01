@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="this.item.image.url" />
+    <img :src="this.item.image.url" @click="handleImageClick" />
   </div>
 </template>
 
@@ -9,6 +9,11 @@ export default {
   props: {
     item: {
       required: true
+    }
+  },
+  methods: {
+    handleImageClick() {
+      this.$emit('click', this.item);
     }
   }
 }

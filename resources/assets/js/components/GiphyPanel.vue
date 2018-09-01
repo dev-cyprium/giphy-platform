@@ -9,32 +9,37 @@
       <input @input="doSearch">
 
       <p id='chosen-gif'></p>
-    <form method="POST" action="#">
-          <input id='chosen-gif-id' type='hidden' name='giphy_id' value=''>
-          <button class='btn btn-primary'>Post</button>
+        <form @submit.prevent='handleSubmit'>
+          <p v-show='items.length > 0'>Selected image: {{ selectedImage || 'No Image selected' }}</p>
+          <button :disabled="selectedId === ''" class='btn btn-primary'>Post</button>
         </form>
         <div class='gif-holder text-center' v-show="items.length > 0">
-          <giphy-image v-for="item in items" :key="item.id" :item="item"></giphy-image>
+          <giphy-image v-for="item in items" :key="item.id" :item="item" @click='handleImageSelected'></giphy-image>
         </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-
-</style>
-
 <script>
 export default {
   data() {
     return {
-      items: []
+      items: [],
+      selectedImage: '',
+      selectedId: ''
     }
   },
   methods: {
     doSearch: _.debounce(function(e) {
       axios.get(`/api/giphy/${e.target.value}`).then((resp) => this.items = resp.data);
-    }, 300)
+    }, 300),
+    handleImageSelected(giphyItem) {
+      this.selectedImage = giphyItem.title;
+      this.selectedId = giphyItem.id;
+    },
+    handleSubmit() {
+      // handle submit
+    }
   }
 }
 </script>
