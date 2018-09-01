@@ -10,6 +10,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import vuexI18n from 'vuex-i18n';
 
+import modalManager from './utils/modal_manager';
+
 Vue.use(Vuex);
 const store = new Vuex.Store();
 Vue.use(vuexI18n.plugin, store);
@@ -45,7 +47,8 @@ const app = new Vue({
     store,
     el: "#app",
     data: {
-        activeModal: ''
+        activeModal: '',
+        modalManager: modalManager
     }
 });
 

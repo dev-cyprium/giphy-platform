@@ -1,5 +1,5 @@
 <template>
-    <modal :show="'delete-post-modal' === openModal" @close="close">
+    <modal v-show="manager.isModalActive('delete-post-modal')" @close="close">
         <div class="modal-header">
             <h3>Delete Post?</h3>
         </div>
@@ -9,6 +9,9 @@
             </p>
         </div>
         <div class="modal-footer">
+            <button @click="close" class="btn btn-primary">
+                No, Cancel
+            </button>
             <button class="btn btn-danger">
                 Yes, Delete Post
             </button>
@@ -18,10 +21,12 @@
 
 <script>
     export default {
-        props: ['openModal'],
+        props: {
+            manager: {required: true}
+        },
         methods: {
             close() {
-                this.$emit('close');
+                this.manager.close();
             }
         }
     }
