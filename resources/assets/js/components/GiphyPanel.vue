@@ -44,7 +44,7 @@ export default {
     },
     handleSubmit() {
       if(this.selectedId !== '') {
-        axios.post('/api/post/create', {giphy_id: this.selectedId}).then(resp => alert('Created'));
+        axios.post('/api/post/create', {giphy_id: this.selectedId}).then(resp => location.reload());
       }
     }
   }
