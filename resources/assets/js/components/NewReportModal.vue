@@ -8,7 +8,7 @@
                 <label>
                     Description
                 </label>
-                <textarea :class="[{'is-invalid': charactersLeft == 0}, 'form-control']" @input="onInput()" v-model="description" rows="5" ></textarea>
+                <textarea :class="[{'is-invalid': charactersLeft < 0}, 'form-control']" @input="onInput()" v-model="description" rows="5" ></textarea>
             </div>
         </div>
         <div class="modal-footer">
@@ -44,7 +44,7 @@
         },
         computed: {
             charactersLeft() {
-                return Math.max(0, this.maxCharacters - this.charactersUsed);
+                return this.maxCharacters - this.charactersUsed;
             },
             maxCharacters: () => 50
         },
