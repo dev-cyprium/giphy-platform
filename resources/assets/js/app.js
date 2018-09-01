@@ -5,52 +5,17 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+import './bootstrap';
+import Vue from 'vue';
 
-let Vue = require('vue');
-
-Vue.component('modal', require('./components/Modal.vue'));
-Vue.component('new-report-modal', require('./components/NewReportModal.vue'));
+Vue.component('modal', require('./components/Modal'));
+Vue.component('new-report-modal', require('./components/NewReportModal'));
+Vue.component('giphy-panel', require('./components/GiphyPanel'));
+Vue.component('giphy-image', require('./components/GiphyImage'))
 
 const app = new Vue({
     el: "#app",
     data: {
         activeModal: ''
     }
-});
-/*
-    Processing for GIF choooser
-*/
-String.prototype.capitalize = function() {
-    return this.charAt(0).toUpperCase() + this.slice(1);
-}
-
-function formatGif(original) {
-    let replacerRegex = /^(.*)(GIF.*)$/;
-    return original.replace(replacerRegex, "$1").capitalize();
-}
-
-function choose(container, data) {
-    $("#chosen-gif").html("<strong>Choosen GIF: </strong>" + formatGif(data.title));
-    $("#chosen-gif-id").val(data.id);
-}
-
-function processImages(images) {
-    let container = $(".gif-holder");
-    container.html("");
-    images.forEach((data) => {
-        let img = $("<img>").attr("src", data.image.url);
-        img.click(() => choose(container, data));
-        container.append(img);
-    });
-}
-
-function processSearchGif() {
-    let term = $("#gif-search").val();
-    axios.get(`/api/giphy/${term}`).then((resp) => processImages(resp.data));
-}
-
-$(document).ready(function() {
-    $("#gif-search").on('keyup', _.debounce(processSearchGif, 250));
-    $("#gif-search").blur(processSearchGif);
 });

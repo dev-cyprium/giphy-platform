@@ -1,4 +1,5 @@
-  <div class="card">
+<giphy-panel></giphy-panel>
+<!-- <div class="card">
     <div class="card-header">
       I'm feeling like...
     </div>
@@ -16,4 +17,4 @@
         <div class='gif-holder text-center'>
       </div>
     </div>
-  </div>
+  </div>-->

@@ -66,11 +66,6 @@
 <script>
     export default {
         props: ['show'],
-        data: function() {
-            return {
-                description: ''
-            }
-        },
         methods: {
             close: function() {
                 $('body').removeClass('modal-open');
