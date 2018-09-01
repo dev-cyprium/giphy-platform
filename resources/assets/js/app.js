@@ -35,6 +35,7 @@ const translationsSr = {
 /* Localization */
 Vue.i18n.add('en', translationsEn);
 Vue.i18n.add('sr', translationsSr);
+Vue.i18n.set('en'); // default locale
 
 /* Components */
 Vue.component('modal', require('./components/Modal'));
@@ -52,7 +53,6 @@ const app = new Vue({
     }
 });
 
-Vue.i18n.set('en'); // default to english
 axios.get('/localization').then(resp => {
     Vue.i18n.set(resp.data.locale);    
 });
