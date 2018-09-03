@@ -12,7 +12,7 @@
             <button @click="close" class="btn btn-primary">
                 No, Cancel
             </button>
-            <button class="btn btn-danger">
+            <button @click="deletePost" class="btn btn-danger">
                 Yes, Delete Post
             </button>
         </div>
@@ -27,6 +27,14 @@
         methods: {
             close() {
                 this.manager.close();
+            },
+            deletePost() {
+                let id = this.manager.getData();
+                axios.delete(`/post/${id}`)
+                    .then(() => console.log('Success!'))
+                    .catch(() => console.log('Failed!'));
+                this.close();
+                window.location.reload();
             }
         }
     }

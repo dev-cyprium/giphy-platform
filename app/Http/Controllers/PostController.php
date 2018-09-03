@@ -30,12 +30,14 @@ class PostController extends Controller
         return view("posts", compact('posts'));
     }
 
+    /*
+        Handled by API call
+    */
     public function delete($giphy_id)
     {
         $post = Post::where('giphy_id', $giphy_id)->first();
         if(Auth::user()->can('delete', $post)) {
-            $post->delete();
-            return redirect('/');
+            return $post->delete();
         }
         throw ValidationException::withMessages(["pop_message" => "Can't delete that post"]);
     }
