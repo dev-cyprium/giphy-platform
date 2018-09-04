@@ -10485,6 +10485,10 @@ a.text-dark:focus {
   }
 }
 
+* {
+  border: 1px solid gray !important;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
@@ -10492,7 +10496,7 @@ a.text-dark:focus {
 }
 
 .container {
-  margin-top: 10em;
+  margin-top: 2em;
 }
 
 .gif-holder {
