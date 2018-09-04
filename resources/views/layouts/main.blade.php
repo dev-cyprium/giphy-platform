@@ -13,6 +13,10 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
+        <nav>
+            
+        </nav>
+
         <div class='container' id='app'>
             @if($errors->has('pop_message'))
             <div class="alert alert-danger alert-dismissible fade show">
