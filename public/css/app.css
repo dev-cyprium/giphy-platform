@@ -10485,14 +10485,75 @@ a.text-dark:focus {
   }
 }
 
-* {
-  border: 1px solid gray !important;
+.site-navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: #fff;
+  min-height: 4.3rem;
 }
 
-.navbar-laravel {
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+.site-navigation__logo {
+  position: absolute;
+  width: 12rem;
+  height: auto;
+  padding: .5em;
+}
+
+.site-navigation__search {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.site-navigation__search .form-input {
+  max-width: 58rem;
+  width: 100%;
+}
+
+/* Move to form.scss */
+
+.form-input input {
+  width: 100%;
+}
+
+.form-input--left-extension {
+  position: relative;
+}
+
+.form-input--left-extension input {
+  padding-left: 1.3em;
+}
+
+.form-input--left-extension i {
+  position: absolute;
+  left: .5em;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 2.25em;
+  opacity: 0.5;
+}
+
+html,
+body {
+  background: #fafafa !important;
 }
 
 .container {

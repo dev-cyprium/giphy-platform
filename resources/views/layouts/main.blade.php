@@ -10,11 +10,19 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-        <nav>
-            
+        <nav class="site-navigation">
+            <img class="site-navigation__logo" src={{ asset('img/logo.svg') }} >
+            <div class="site-navigation__search">
+                <div class="form-input form-input--left-extension">
+                    <input type="text" placeholder="Search people...">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
         </nav>
 
         <div class='container' id='app'>

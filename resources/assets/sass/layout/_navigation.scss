@@ -1,3 +1,46 @@
-* {
-  border: 1px solid gray !important;
+$site-navigation-bg: #fff;
+
+.site-navigation {
+  display: flex;
+  background: $site-navigation-bg;
+  min-height: 4.3rem;
+  &__logo {
+    position: absolute;
+    width: 12rem;
+    height: auto;
+    padding: .5em;
+  }
+  &__search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .form-input {
+      max-width: 58rem;
+      width: 100%;
+    }
+  }
+}
+
+/* Move to form.scss */
+.form-input {
+  input {
+    width: 100%;
+  }
+  &--left-extension {
+    position: relative;
+    input {
+      padding-left: 1.3em;
+    }
+    i {
+      position: absolute;
+      left: .5em;
+      top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 2.25em;
+      opacity: 0.5;
+    }
+  }
 }

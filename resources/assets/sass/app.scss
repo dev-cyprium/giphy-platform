@@ -14,11 +14,10 @@
 // My Layout
 @import "layout/navigation";
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+html,
+body {
+  background: #fafafa !important;
 }
-
 
 .container {
   margin-top: 2em;
