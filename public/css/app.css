@@ -10491,8 +10491,8 @@ a.text-dark:focus {
   display: flex;
   min-height: 4.3rem;
   background: #fff;
-  -webkit-box-shadow: 1px 1px 2px #c1c1c1;
-          box-shadow: 1px 1px 2px #c1c1c1;
+  -webkit-box-shadow: .1em .1em .2em #eaeaea;
+          box-shadow: .1em .1em .2em #eaeaea;
 }
 
 .site-navigation__logo {
@@ -10520,6 +10520,27 @@ a.text-dark:focus {
 .site-navigation__search .form-input {
   width: 30rem;
   max-width: 40%;
+}
+
+.site-navigation__navbar {
+  -webkit-box-shadow: 0 .2em .3em -2px #c5c5c5;
+          box-shadow: 0 .2em .3em -2px #c5c5c5;
+}
+
+.site-navigation__navbar ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+  padding: 2em 0;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  max-width: 50rem;
+  list-style-type: none;
+}
+
+.site-navigation__navbar ul a {
+  font-size: 1.5rem;
 }
 
 /* Move to form.scss */

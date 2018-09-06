@@ -6,7 +6,7 @@ $primary: map-get($map: $theme-colors, $key: primary);
     display: flex;
     min-height: 4.3rem;
     background: $site-navigation-bg;
-    box-shadow: 1px 1px 2px #c1c1c1;
+    box-shadow: .1em .1em .2em #eaeaea;
   }
   &__logo {
     position: absolute;
@@ -22,6 +22,20 @@ $primary: map-get($map: $theme-colors, $key: primary);
     .form-input {
       width: 30rem;
       max-width: 40%;
+    }
+  }
+  &__navbar {
+    box-shadow: 0 .2em .3em -2px #c5c5c5;
+    ul {
+      display: flex;
+      margin: 0 auto;
+      padding: 2em 0;
+      justify-content: space-around;
+      max-width: 50rem;
+      list-style-type: none;
+      a {
+        font-size: 1.5rem;
+      }
     }
   }
 }
