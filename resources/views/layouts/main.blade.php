@@ -16,12 +16,27 @@
     </head>
     <body>
         <nav class="site-navigation">
-            <img class="site-navigation__logo" src={{ asset('img/logo.svg') }} >
-            <div class="site-navigation__search">
-                <div class="form-input form-input--left-extension">
-                    <input type="text" placeholder="Search people...">
-                    <i class="fas fa-search"></i>
+            <div class="site-navigation__header">
+                <img class="site-navigation__logo" src={{ asset('img/logo.svg') }} >
+                <div class="site-navigation__search">
+                    <div class="form-input form-input--left-extension">
+                        <input type="text" placeholder="Search people...">
+                        <i class="fas fa-search"></i>
+                    </div>
                 </div>
+            </div>
+            <div class="site-navigation__navbar">
+                <ul>
+                    <li>
+                        <a href='#'>Trending</a>
+                    </li>
+                    <li>
+                        <a href='#'>Fresh</a>
+                    </li>
+                    <li>
+                        <a href='#'>Friends</a>
+                    </li>
+                </ul>
             </div>
         </nav>
 

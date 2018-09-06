@@ -10485,12 +10485,14 @@ a.text-dark:focus {
   }
 }
 
-.site-navigation {
+.site-navigation__header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: #fff;
   min-height: 4.3rem;
+  background: #fff;
+  -webkit-box-shadow: 1px 1px 2px #c1c1c1;
+          box-shadow: 1px 1px 2px #c1c1c1;
 }
 
 .site-navigation__logo {
@@ -10516,14 +10518,29 @@ a.text-dark:focus {
 }
 
 .site-navigation__search .form-input {
-  max-width: 58rem;
-  width: 100%;
+  width: 30rem;
+  max-width: 40%;
 }
 
 /* Move to form.scss */
 
 .form-input input {
   width: 100%;
+  background: #fafafa;
+  border-radius: .22em;
+  border: 1px solid #ebebeb;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  -webkit-transition: all ease-in 150ms;
+  transition: all ease-in 150ms;
+}
+
+.form-input input:focus,
+.form-input input:active {
+  outline: 0;
+  border: 1px solid #42b983;
+  -webkit-box-shadow: 0 0 0.4rem rgba(66, 185, 131, 0.25);
+          box-shadow: 0 0 0.4rem rgba(66, 185, 131, 0.25);
 }
 
 .form-input--left-extension {
@@ -10531,7 +10548,7 @@ a.text-dark:focus {
 }
 
 .form-input--left-extension input {
-  padding-left: 1.3em;
+  padding-left: 1.8em !important;
 }
 
 .form-input--left-extension i {
@@ -10547,7 +10564,7 @@ a.text-dark:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 2.25em;
+  height: 2.65em;
   opacity: 0.5;
 }
 
