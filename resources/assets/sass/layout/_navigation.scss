@@ -1,5 +1,6 @@
 $site-navigation-bg: #fff;
 $primary: map-get($map: $theme-colors, $key: primary);
+$link-color: rgb(26, 26, 26);
 
 .site-navigation {
   &__header {
@@ -29,13 +30,33 @@ $primary: map-get($map: $theme-colors, $key: primary);
     ul {
       display: flex;
       margin: 0 auto;
-      padding: 2em 0;
       justify-content: space-around;
       max-width: 50rem;
       list-style-type: none;
-      a {
-        font-size: 1.5rem;
-      }
+    }
+  }
+}
+
+.link {
+  position: relative;
+  height: 100%;
+  margin: 1.4em 0;
+  a {
+    font-size: 1.5rem;
+    color: rgba($link-color, .20);
+  }
+  &--is-active {
+    a {
+      color: rgb(26, 26, 26);
+    }
+    &:after {
+      content: "";
+      width: calc(100% + 2em);
+      height: .25rem;
+      background: $primary;
+      position: absolute;
+      bottom: -1.4em;
+      left: -1em;
     }
   }
 }

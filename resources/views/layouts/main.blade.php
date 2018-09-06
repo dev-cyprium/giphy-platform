@@ -27,13 +27,13 @@
             </div>
             <div class="site-navigation__navbar">
                 <ul>
-                    <li>
+                    <li class="link link--is-active">
                         <a href='#'>Trending</a>
                     </li>
-                    <li>
+                    <li class="link">
                         <a href='#'>Fresh</a>
                     </li>
-                    <li>
+                    <li class="link">
                         <a href='#'>Friends</a>
                     </li>
                 </ul>

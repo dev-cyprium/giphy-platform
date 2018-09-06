@@ -10532,15 +10532,35 @@ a.text-dark:focus {
   display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
-  padding: 2em 0;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   max-width: 50rem;
   list-style-type: none;
 }
 
-.site-navigation__navbar ul a {
+.link {
+  position: relative;
+  height: 100%;
+  margin: 1.4em 0;
+}
+
+.link a {
   font-size: 1.5rem;
+  color: rgba(26, 26, 26, 0.2);
+}
+
+.link--is-active a {
+  color: #1a1a1a;
+}
+
+.link--is-active:after {
+  content: "";
+  width: calc(100% + 2em);
+  height: .25rem;
+  background: #42b983;
+  position: absolute;
+  bottom: -1.4em;
+  left: -1em;
 }
 
 /* Move to form.scss */
