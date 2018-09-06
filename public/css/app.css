@@ -10532,6 +10532,7 @@ a.text-dark:focus {
   display: -ms-flexbox;
   display: flex;
   margin: 0 auto;
+  padding: 0;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   max-width: 50rem;
@@ -10547,6 +10548,15 @@ a.text-dark:focus {
 .link a {
   font-size: 1.5rem;
   color: rgba(26, 26, 26, 0.2);
+  -webkit-transition: all ease-in 150ms;
+  transition: all ease-in 150ms;
+}
+
+.link a:hover,
+.link a:active,
+.link a:visited {
+  color: #1a1a1a;
+  text-decoration: none;
 }
 
 .link--is-active a {

@@ -30,6 +30,7 @@ $link-color: rgb(26, 26, 26);
     ul {
       display: flex;
       margin: 0 auto;
+      padding: 0;
       justify-content: space-around;
       max-width: 50rem;
       list-style-type: none;
@@ -44,10 +45,17 @@ $link-color: rgb(26, 26, 26);
   a {
     font-size: 1.5rem;
     color: rgba($link-color, .20);
+    transition: all ease-in 150ms;
+    &:hover,
+    &:active,
+    &:visited {
+      color: $link-color;  
+      text-decoration: none; 
+    }
   }
   &--is-active {
     a {
-      color: rgb(26, 26, 26);
+      color: $link-color;
     }
     &:after {
       content: "";
