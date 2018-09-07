@@ -15,32 +15,59 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-        <nav class="site-navigation">
-            <div class="site-navigation__header">
-                <img class="site-navigation__logo" src={{ asset('img/logo.svg') }} >
-                <div class="site-navigation__search">
-                    <div class="form-input form-input--left-extension">
-                        <input type="text" placeholder="Search people...">
-                        <i class="fas fa-search"></i>
+        <div id='app'>
+            <nav class="site-navigation">
+                <div class="site-navigation__header">
+                    <img class="site-navigation__logo" src={{ asset('img/logo.svg') }} >
+                    <div class="site-navigation__search">
+                        <div class="form-input form-input--left-extension">
+                            <input type="text" placeholder="Search people...">
+                            <i class="fas fa-search"></i>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="site-navigation__navbar">
-                <ul>
-                    <li class="link link--is-active">
-                        <a href='#'>Trending</a>
-                    </li>
-                    <li class="link">
-                        <a href='#'>Fresh</a>
-                    </li>
-                    <li class="link">
-                        <a href='#'>Friends</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                <div class="site-navigation__navbar">
+                    <ul>
+                        <li class="link link--is-active">
+                            <a href='#'>Trending</a>
+                        </li>
+                        <li class="link">
+                            <a href='#'>Fresh</a>
+                        </li>
+                        <li class="link">
+                            <a href='#'>Friends</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="my-container" role="main">
+                <aside class="tile avatar">
+                    @auth
+                        <div class="avatar__image">
+                            <img src="{{ Gravatar::get($r->user->email) }}" />
+                        </div>
+                        <h1>{{ Auth::user()->email }}</h1>
+                        <h2>{{ Auth::user()->name }}</h2>
+                        <div class="avatar__stats">
+                            <div class="avatar__stat">
+                                <h3>21</h3>
+                                <h4>Posts</h4>
+                            </div>
+                            <div class="avatar__stat">
+                                <h3>120</h3>
+                                <h4>Upvotes</h4>
+                            </div>
+                        </div>
+                    @endauth
+                </aside>
+                <div class="content">
 
-        <div class='container' id='app'>
+                </div>
+                <aside class="tile">
+
+                </div>
+            </main>
+        <div class='container'>
             @if($errors->has('pop_message'))
             <div class="alert alert-danger alert-dismissible fade show">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -56,6 +83,7 @@
                     @include('aside')
                 </aside>
             </div>
+        </div>
     </div>
 
 

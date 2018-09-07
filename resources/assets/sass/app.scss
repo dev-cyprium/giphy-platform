@@ -15,9 +15,10 @@
 @import "layout/navigation";
 @import "layout/form";
 
+
 html,
 body {
-  background: #fafafa !important;
+  background: $body-bg !important;
 }
 
 .container {
