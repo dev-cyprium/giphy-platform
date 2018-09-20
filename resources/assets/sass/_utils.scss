@@ -1,5 +1,6 @@
 $tile-color: white;
 $shadow-color: #ddd;
+$tile-gutter: 2em;
 
 .my-container {
   display: flex;
@@ -20,10 +21,10 @@ $shadow-color: #ddd;
   background: $tile-color;
   box-shadow: 4px 4px 10px -3px $shadow-color;
   &:not(:last-child) {
-    margin-right: 1em;
+    margin-right: $tile-gutter;
   }
   &:not(:first-child) {
-    margin-left: 1em;
+    margin-left: $tile-gutter;
   }
 }
 
