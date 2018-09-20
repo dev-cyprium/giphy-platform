@@ -44,7 +44,7 @@
                 <aside class="tile avatar">
                     @auth
                         <div class="avatar__image">
-                            <img src="{{ Gravatar::get($r->user->email) }}" />
+                            <img src="{{ Gravatar::get(Auth::user()->email) }}" />
                         </div>
                         <h1>{{ Auth::user()->email }}</h1>
                         <h2>{{ Auth::user()->name }}</h2>
