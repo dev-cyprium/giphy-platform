@@ -4,12 +4,15 @@
 
 // Variables
 @import 'variables';
+
+// Mixins
+@import "utilities/mixins";
+
 // Utils
-@import "utils";
+@import "utilities/utils";
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
 
 // My Layout
 @import "layout/navigation";

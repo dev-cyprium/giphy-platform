@@ -1,4 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);.my-container {
+@import url(https://fonts.googleapis.com/css?family=Nunito);/* Mixins */
+
+.my-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,7 +15,7 @@
           flex: 1;
 }
 
-.content {
+.my-container .content {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;

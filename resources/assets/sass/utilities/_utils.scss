@@ -10,11 +10,10 @@ $tile-gutter: 2em;
   & > .tile {
     flex: 1;
   }
-}
-
-.content {
-  flex: 2;
-  background: $tile-color;
+  .content {
+    flex: 2;
+    background: $tile-color;
+  }
 }
 
 .tile {

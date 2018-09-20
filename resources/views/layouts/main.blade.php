@@ -60,7 +60,7 @@
                         </div>
                     @endauth
                 </aside>
-                <div class="content">
+                <div class="tile content">
 
                 </div>
                 <aside class="tile">
