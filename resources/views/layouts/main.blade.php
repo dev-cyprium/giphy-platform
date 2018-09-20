@@ -65,7 +65,7 @@
                 </div>
                 <aside class="tile">
 
-                </div>
+                </aside>
             </main>
         <div class='container'>
             @if($errors->has('pop_message'))
@@ -85,7 +85,6 @@
             </div>
         </div>
     </div>
-
 
     <script src="{{ asset('js/app.js') }}">
     </script>    
