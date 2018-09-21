@@ -1,5 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);/* Mixins */
 
+/**
+  Makes transitions in the format of:
+  transition: prop1 easing duration, prop2 easing duration ...
+
+  First argument is duration, other default to `all` and `ease-in`
+**/
+
 .my-container {
   display: -webkit-box;
   display: -ms-flexbox;

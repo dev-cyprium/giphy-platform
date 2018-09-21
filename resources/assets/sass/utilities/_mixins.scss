@@ -1,4 +1,11 @@
 /* Mixins */
+
+/**
+  Makes transitions in the format of:
+  transition: prop1 easing duration, prop2 easing duration ...
+
+  First argument is duration, other default to `all` and `ease-in`
+**/
 @mixin make-transition($duration, $elements: all, $easing: ease-in) {
   @if $elements == all {
     transition: $elements $easing $duration;
