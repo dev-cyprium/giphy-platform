@@ -61,19 +61,33 @@
                     @endauth
                 </aside>
                 <div class="tile content">
-                    <div class="step-form">
-                        <multi-step-form>
-                            <form-step class="form-input">
-                                <textarea placeholder="Express yourself"></textarea>
-                            </form-step>
-                            <form-step>
-                                <p>This is step #2</p>
-                            </form-step>
-                            <form-step>
-                                <p>This is step #3</p>
-                            </form-step>
-                        </multi-step-form>
-                    </div>
+                    <nav>
+                        <ul>
+                            <li>
+                                <i class="fa fa-font"></i>
+                                Express yourself
+                            </li>
+                            <li>
+                                <i class="far fa-lightbulb"></i>
+                                Giphonize yourself
+                            </li>
+                            <li>
+                                <i class="fas fa-sticky-note"></i>
+                                Make a post
+                            </li>
+                        </ul>
+                    </nav>
+                    <multi-step-form class="step-form">
+                        <form-step class="form-input">
+                            <textarea placeholder="Message..."></textarea>
+                        </form-step>
+                        <form-step>
+                            <p>This is step #2</p>
+                        </form-step>
+                        <form-step>
+                            <p>This is step #3</p>
+                        </form-step>
+                    </multi-step-form>
                 </div>
                 <aside class="tile">
 
