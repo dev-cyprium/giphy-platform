@@ -56,14 +56,16 @@ $link-color: rgb(26, 26, 26);
   height: 100%;
   margin: 1.4em 0;
   a {
-    font-size: 1.5rem;
-    color: rgba($link-color, .20);
     transition: all ease-in 150ms;
+    color: rgba($link-color, .20);
     &:hover,
     &:active,
     &:visited {
       color: $link-color;  
       text-decoration: none; 
+    }
+    @include respond-to(tablet) {
+      font-size: 1.5rem;
     }
   }
   &--is-active {

@@ -10661,10 +10661,9 @@ a.text-dark:focus {
 }
 
 .link a {
-  font-size: 1.5rem;
-  color: rgba(26, 26, 26, 0.2);
   -webkit-transition: all ease-in 150ms;
   transition: all ease-in 150ms;
+  color: rgba(26, 26, 26, 0.2);
 }
 
 .link a:hover,
@@ -10672,6 +10671,12 @@ a.text-dark:focus {
 .link a:visited {
   color: #1a1a1a;
   text-decoration: none;
+}
+
+@media (min-width: 40em) {
+  .link a {
+    font-size: 1.5rem;
+  }
 }
 
 .link--is-active a {
