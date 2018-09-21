@@ -61,23 +61,23 @@
                     @endauth
                 </aside>
                 <div class="tile content">
-                    <nav>
-                        <ul>
-                            <li>
-                                <i class="fa fa-font"></i>
-                                Express yourself
-                            </li>
-                            <li>
-                                <i class="far fa-lightbulb"></i>
-                                Giphonize yourself
-                            </li>
-                            <li>
-                                <i class="fas fa-sticky-note"></i>
-                                Make a post
-                            </li>
-                        </ul>
-                    </nav>
                     <multi-step-form class="step-form">
+                        <nav class="new-post-nav">
+                            <ul>
+                                <li class="is-active">
+                                    <i class="fa fa-font"></i>
+                                    Express yourself
+                                </li>
+                                <li>
+                                    <i class="far fa-lightbulb"></i>
+                                    Giphonize yourself
+                                </li>
+                                <li>
+                                    <i class="fas fa-sticky-note"></i>
+                                    Make a post
+                                </li>
+                            </ul>
+                        </nav>
                         <form-step class="form-input">
                             <textarea placeholder="Message..."></textarea>
                         </form-step>

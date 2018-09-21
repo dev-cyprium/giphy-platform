@@ -1,0 +1,11 @@
+.new-post-nav {
+  ul {
+    display: flex;
+    li {
+      padding: 1.5em;
+      &.is-active {
+        background: $primary;
+      }
+    }
+  }
+}

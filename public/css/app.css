@@ -10651,7 +10651,6 @@ a.text-dark:focus {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   max-width: 50rem;
-  list-style-type: none;
 }
 
 .link {
@@ -10773,9 +10772,31 @@ a.text-dark:focus {
   margin: 1em;
 }
 
+.new-post-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.new-post-nav ul li {
+  padding: 1.5em;
+}
+
+.new-post-nav ul li.is-active {
+  background: #42b983;
+}
+
 html,
 body {
   background: #fafafa !important;
+}
+
+/* Should extract in reset.scss */
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .container {

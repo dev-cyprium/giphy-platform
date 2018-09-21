@@ -18,10 +18,19 @@
 @import "layout/navigation";
 @import "layout/form";
 
+// Import everything related to GIFs
+@import "gifs/all";
 
 html,
 body {
   background: $body-bg !important;
+}
+
+/* Should extract in reset.scss */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
