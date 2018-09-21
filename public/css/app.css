@@ -10656,23 +10656,36 @@ a.text-dark:focus {
 
 /* Move to form.scss */
 
-.form-input input {
+.form-input input,
+.form-input textarea {
   width: 100%;
   background: #fafafa;
   border-radius: .22em;
   border: 1px solid #ebebeb;
-  padding-top: .5em;
-  padding-bottom: .5em;
-  -webkit-transition: all ease-in 150ms;
-  transition: all ease-in 150ms;
+  -webkit-transition: border ease-in 150ms , -webkit-box-shadow ease-in 150ms;
+  transition: border ease-in 150ms , -webkit-box-shadow ease-in 150ms;
+  transition: box-shadow ease-in 150ms , border ease-in 150ms;
+  transition: box-shadow ease-in 150ms , border ease-in 150ms , -webkit-box-shadow ease-in 150ms;
 }
 
 .form-input input:focus,
-.form-input input:active {
+.form-input textarea:focus,
+.form-input input:active,
+.form-input textarea:active {
   outline: 0;
   border: 1px solid #42b983;
   -webkit-box-shadow: 0 0 0.4rem rgba(66, 185, 131, 0.25);
           box-shadow: 0 0 0.4rem rgba(66, 185, 131, 0.25);
+}
+
+.form-input input {
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.form-input textarea {
+  padding: .33em;
+  line-height: 1.3;
 }
 
 .form-input--left-extension {
@@ -10712,6 +10725,12 @@ a.text-dark:focus {
 .form-button:disabled {
   background: #9edcc0;
   cursor: not-allowed;
+}
+
+/* Step form */
+
+.step-form {
+  margin: 1em;
 }
 
 html,

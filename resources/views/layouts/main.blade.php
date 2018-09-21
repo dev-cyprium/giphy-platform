@@ -61,17 +61,19 @@
                     @endauth
                 </aside>
                 <div class="tile content">
-                    <multi-step-form>
-                        <form-step>
-                            <textarea></textarea>
-                        </form-step>
-                        <form-step>
-                            <p>This is step #2</p>
-                        </form-step>
-                        <form-step>
-                            <p>This is step #3</p>
-                        </form-step>
-                    </multi-step-form>
+                    <div class="step-form">
+                        <multi-step-form>
+                            <form-step class="form-input">
+                                <textarea></textarea>
+                            </form-step>
+                            <form-step>
+                                <p>This is step #2</p>
+                            </form-step>
+                            <form-step>
+                                <p>This is step #3</p>
+                            </form-step>
+                        </multi-step-form>
+                    </div>
                 </div>
                 <aside class="tile">
 

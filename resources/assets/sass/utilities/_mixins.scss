@@ -1,1 +1,19 @@
 /* Mixins */
+@mixin make-transition($duration, $elements: all, $easing: ease-in) {
+  @if $elements == all {
+    transition: $elements $easing $duration;
+  } 
+  @else {
+    $result: ();
+    @for $i from 1 through length($elements) {
+      $type: nth($elements, $i);
+      $result: append($result, $type);
+      $result: append($result, $easing);
+      $result: append($result, $duration);
+      @if $i != length($elements) {
+        $result: append($result, unquote(","))
+      }
+    }
+    transition: $result;
+  }
+}
