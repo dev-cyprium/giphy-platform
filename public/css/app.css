@@ -10691,7 +10691,8 @@ a.text-dark:focus {
 }
 
 .form-input textarea {
-  padding: .33em;
+  font-size: 1.3rem;
+  padding: .5em;
   line-height: 1.3;
 }
 

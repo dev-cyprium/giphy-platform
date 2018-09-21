@@ -64,7 +64,7 @@
                     <div class="step-form">
                         <multi-step-form>
                             <form-step class="form-input">
-                                <textarea></textarea>
+                                <textarea placeholder="Express yourself"></textarea>
                             </form-step>
                             <form-step>
                                 <p>This is step #2</p>
