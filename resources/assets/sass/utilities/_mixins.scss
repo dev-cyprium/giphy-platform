@@ -5,6 +5,8 @@
   transition: prop1 easing duration, prop2 easing duration ...
 
   First argument is duration, other default to `all` and `ease-in`
+
+  TODO: fix, getts messed up.
 **/
 @mixin make-transition($duration, $elements: all, $easing: ease-in) {
   @if $elements == all {
@@ -37,4 +39,4 @@
   } @else {
     @error "The breakpoint you're reffering to doesn't exist."
   }
-}
+} 
