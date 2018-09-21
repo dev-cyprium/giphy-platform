@@ -3,17 +3,19 @@ $shadow-color: #ddd;
 $tile-gutter: 1em;
 
 .my-container {
-  display: flex;
-  max-width: 100rem;
-  margin: 0 auto;
-  margin-top: 2.5rem;
-  & > .tile {
-    flex: 1;
-  }
-  .content {
-    flex: 2;
-    background: $tile-color;
-  }
+  @include respond-to(tablet) {
+    display: flex;
+    max-width: 100rem;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+    & > .tile {
+      flex: 1;
+    }
+    .content {
+      flex: 2;
+      background: $tile-color;
+    }
+  }  
 }
 
 .tile {

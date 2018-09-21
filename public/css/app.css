@@ -12,26 +12,28 @@
   CSS code for responsive design
 **/
 
-.my-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  max-width: 100rem;
-  margin: 0 auto;
-  margin-top: 2.5rem;
-}
+@media (min-width: 40em) {
+  .my-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100rem;
+    margin: 0 auto;
+    margin-top: 2.5rem;
+  }
 
-.my-container > .tile {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
+  .my-container > .tile {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
 
-.my-container .content {
-  -webkit-box-flex: 2;
-      -ms-flex: 2;
-          flex: 2;
-  background: white;
+  .my-container .content {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
+    background: white;
+  }
 }
 
 .tile {
