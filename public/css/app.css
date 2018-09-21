@@ -36,11 +36,11 @@
 }
 
 .tile:not(:last-child) {
-  margin-right: 2em;
+  margin-right: 1em;
 }
 
 .tile:not(:first-child) {
-  margin-left: 2em;
+  margin-left: 1em;
 }
 
 .avatar__image {
