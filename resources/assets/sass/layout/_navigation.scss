@@ -4,25 +4,38 @@ $link-color: rgb(26, 26, 26);
 
 .site-navigation {
   &__header {
-    display: flex;
     min-height: 4.3rem;
     background: $site-navigation-bg;
     box-shadow: .1em .1em .2em #eaeaea;
+    text-align: center;
+    @include respond-to(tablet) {
+      display: flex;
+    }
   }
   &__logo {
-    position: absolute;
-    width: 12rem;
-    height: auto;
-    padding: .5em;
+    margin: 1.3em auto;
+    @include respond-to(tablet) {
+      margin: 0;
+      position: absolute;
+      width: 12rem;
+      height: auto;
+      padding: .5em;
+    }
   }
   &__search {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .form-input {
-      width: 30rem;
-      max-width: 40%;
+    width: 80%;
+    padding-bottom: 2em;
+    margin: 0 auto;
+    @include respond-to(tablet) {
+      flex: 1;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .form-input {
+        width: 30rem;
+        max-width: 40%;
+      }
     }
   }
   &__navbar {

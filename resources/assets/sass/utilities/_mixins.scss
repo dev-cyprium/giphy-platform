@@ -24,3 +24,17 @@
     transition: $result;
   }
 }
+
+/**
+  Uses the breakpoints map to inject media queries into
+  CSS code for responsive design
+**/
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @error "The breakpoint you're reffering to doesn't exist."
+  }
+}

@@ -7,6 +7,11 @@
   First argument is duration, other default to `all` and `ease-in`
 **/
 
+/**
+  Uses the breakpoints map to inject media queries into
+  CSS code for responsive design
+**/
+
 .my-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10574,40 +10579,62 @@ a.text-dark:focus {
 }
 
 .site-navigation__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   min-height: 4.3rem;
   background: #fff;
   -webkit-box-shadow: .1em .1em .2em #eaeaea;
           box-shadow: .1em .1em .2em #eaeaea;
+  text-align: center;
+}
+
+@media (min-width: 40em) {
+  .site-navigation__header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .site-navigation__logo {
-  position: absolute;
-  width: 12rem;
-  height: auto;
-  padding: .5em;
+  margin: 1.3em auto;
+}
+
+@media (min-width: 40em) {
+  .site-navigation__logo {
+    margin: 0;
+    position: absolute;
+    width: 12rem;
+    height: auto;
+    padding: .5em;
+  }
 }
 
 .site-navigation__search {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 80%;
+  padding-bottom: 2em;
+  margin: 0 auto;
 }
 
-.site-navigation__search .form-input {
-  width: 30rem;
-  max-width: 40%;
+@media (min-width: 40em) {
+  .site-navigation__search {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .site-navigation__search .form-input {
+    width: 30rem;
+    max-width: 40%;
+  }
 }
 
 .site-navigation__navbar {
