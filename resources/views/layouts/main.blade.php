@@ -65,6 +65,7 @@
                         <template slot-scope="{ activeStep }" slot="navigation">
                             <ul>
                                 <li :class="{ 'is-active': (activeStep == 0) }">
+                                    <p class="step-form__label">Step 1</p>
                                     <i class="fa fa-font"></i>
                                     Express yourself
                                 </li>
@@ -112,6 +113,8 @@
         </div>
     </div>
 
+    <script src="{{ asset('/js/manifest.js') }}"></script>
+    <script src="{{ asset('/js/vendor.js') }}"></script>
     <script src="{{ asset('js/app.js') }}">
     </script>    
     </body>
