@@ -5,11 +5,8 @@
     </nav>
 
     <slot></slot>
-    <h2>My active step: 
-      <small>{{ activeStep+1 }}</small>
-    </h2>
 
-    <button @click="selectTab()">
+    <button class="form-button" @click="selectTab()">
       Next
     </button>
   </div>

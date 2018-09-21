@@ -10772,18 +10772,23 @@ a.text-dark:focus {
   margin: 1em;
 }
 
-.new-post-nav ul {
+.step-form .new-post-nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.new-post-nav ul li {
+.step-form .new-post-nav ul li {
   padding: 1.5em;
 }
 
-.new-post-nav ul li.is-active {
+.step-form .new-post-nav ul li.is-active {
   background: #42b983;
+}
+
+.step-form textarea {
+  margin: 1em 0;
+  min-height: 8em;
 }
 
 html,

@@ -1,11 +1,18 @@
-.new-post-nav {
-  ul {
-    display: flex;
-    li {
-      padding: 1.5em;
-      &.is-active {
-        background: $primary;
+.step-form {
+  .new-post-nav {
+    ul {
+      display: flex;
+      li {
+        padding: 1.5em;
+        &.is-active {
+          background: $primary;
+        }
       }
     }
+  }
+
+  textarea {
+    margin: 1em 0;
+    min-height: 8em;
   }
 }
