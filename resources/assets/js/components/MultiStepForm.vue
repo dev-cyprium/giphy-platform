@@ -1,5 +1,9 @@
 <template>
   <div>
+    <nav class="new-post-nav">
+      <slot name="navigation" :active-step="activeStep"></slot>
+    </nav>
+
     <slot></slot>
     <h2>My active step: 
       <small>{{ activeStep+1 }}</small>

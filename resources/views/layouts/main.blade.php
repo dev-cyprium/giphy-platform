@@ -62,22 +62,22 @@
                 </aside>
                 <div class="tile content">
                     <multi-step-form class="step-form">
-                        <nav class="new-post-nav">
+                        <template slot-scope="{ activeStep }" slot="navigation">
                             <ul>
-                                <li class="is-active">
+                                <li :class="{ 'is-active': (activeStep == 0) }">
                                     <i class="fa fa-font"></i>
                                     Express yourself
                                 </li>
-                                <li>
+                                <li :class="{ 'is-active': (activeStep == 1) }">
                                     <i class="far fa-lightbulb"></i>
                                     Giphonize yourself
                                 </li>
-                                <li>
+                                <li :class="{ 'is-active': (activeStep == 2) }">
                                     <i class="fas fa-sticky-note"></i>
                                     Make a post
                                 </li>
                             </ul>
-                        </nav>
+                        </template>
                         <form-step class="form-input">
                             <textarea placeholder="Message..."></textarea>
                         </form-step>
