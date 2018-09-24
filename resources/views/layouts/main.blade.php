@@ -70,10 +70,12 @@
                                     Express yourself
                                 </li>
                                 <li :class="{ 'is-active': (activeStep == 1) }">
+                                    <p class="step-form__label">Step 2</p>
                                     <i class="far fa-lightbulb"></i>
                                     Giphonize yourself
                                 </li>
                                 <li :class="{ 'is-active': (activeStep == 2) }">
+                                    <p class="step-form__label">Step 3</p>
                                     <i class="fas fa-sticky-note"></i>
                                     Make a post
                                 </li>
