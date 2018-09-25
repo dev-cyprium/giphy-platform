@@ -3,21 +3,22 @@ namespace App\Services;
 
 class GiphyService 
 {
-  private const APIKEY  = "OpmBrRM0QARKnRKKnuZGa2DTvN2EKam5";
   private const URLBASE = "https://api.giphy.com/v1/gifs/";
   private const LIMIT   = 10;
 
   private $client;
+  private $apiKey;
 
   public function __construct()
   {
     $this->client = new \GuzzleHttp\Client();
+    $this->apiKey = env("GIPHY_KEY");
   }
 
   public function getByID($id) 
   {
     $payload = [
-      "api_key" => self::APIKEY
+      "api_key" => $this->apiKey
     ];
 
     $url = $this->encodeParams($payload, "$id");
@@ -29,7 +30,7 @@ class GiphyService
   public function search(string $term)
   {
     $payload = [
-      "api_key" => self::APIKEY,
+      "api_key" => $this->apiKey,
       "q" => $term,
       "limit" => self::LIMIT,
       "offset" => 0,
