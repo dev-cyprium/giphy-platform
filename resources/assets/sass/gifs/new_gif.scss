@@ -1,15 +1,40 @@
+
+// local variables
+
+$arrow-width: 30px;
+
 .step-form {
+  margin: 1em;
   .new-post-nav {
+    background:#fafafa;
     ul {
       display: flex;
+      align-items: flex-start;
       li {
+        flex: 1;
         padding: 1.5em;
+        position: relative;
+        &.is-active + li {
+          margin-left: $arrow-width;
+        }
         &.is-active {
           background: $primary;
+          &:not(:last-of-type):after {
+            width: 0; 
+            height: 0; 
+            top: 0; 
+            right: -$arrow-width;
+            display: block;
+            position: absolute;
+            content: "";
+            border-top: 44.64px solid transparent;
+            border-bottom: 44.64px solid transparent;
+              border-left: $arrow-width solid $primary; 
+            }
+          }
         }
       }
     }
-  }
 
   textarea {
     margin: 1em 0;
