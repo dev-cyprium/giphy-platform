@@ -16,6 +16,7 @@ $link-color: rgb(26, 26, 26);
     margin: 1.3em auto;
     @include respond-to(tablet) {
       margin: 0;
+      margin-left: 1em;
       position: absolute;
       width: 12rem;
       height: auto;
@@ -33,7 +34,7 @@ $link-color: rgb(26, 26, 26);
       align-items: center;
       justify-content: center;
       .form-input {
-        width: 30rem;
+        width: 41rem;
         max-width: 40%;
       }
     }

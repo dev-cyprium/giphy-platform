@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Giphogram</title>
+        <title>Giphygram</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -69,7 +69,7 @@
                                     <i class="fa fa-font"></i>
                                     Express yourself
                                 </li>
-                                <li :class="{ 'is-active': (activeStep == 1) }">
+                                <li :class="[{ 'is-active': (activeStep == 1) }, 'f-2']">
                                     <p class="step-form__label">Step 2</p>
                                     <i class="far fa-lightbulb"></i>
                                     Giphonize yourself
