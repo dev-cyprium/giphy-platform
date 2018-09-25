@@ -24,5 +24,14 @@ In order to issue a pull request do the following:
 The project is a laravel project which requires the following to be setup:
   
   1) Run the `composer install` to install the dependencies
-  2) Configure the `.env` file, for Giphy Key you need to ask for it
+  2) Configure the `.env` file, to use Giphy, I can provide the `dev` key via email
+  3) Run the migrations ( `php artisan migrate` )
+  4) (Optional) Seed the database ( `php artisan db:seed` )
+  5) Install passport keys ( `php artisan passport:install` )
+  6) Install node dependencies ( `yarn` )
+
+To start the development process:
+  - Run the laravel server ( `php artisan serve` )
+  - Run the node watcher ( `yarn watch` )
+  - (Optional) Run tinker ( `php artisan ti` )
   
