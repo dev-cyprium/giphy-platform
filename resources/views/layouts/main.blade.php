@@ -66,7 +66,7 @@
                             <ul>
                                 <li :class="{ 'is-active': (activeStep == 0) }">
                                     <p class="step-form__label">Step 1</p>
-                                    <i class="fa fa-font"></i>
+                                    <i class="fas fa-microphone-alt"></i>
                                     Express yourself
                                 </li>
                                 <li :class="[{ 'is-active': (activeStep == 1) }, 'f-2']">

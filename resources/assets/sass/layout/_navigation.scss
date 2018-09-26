@@ -58,6 +58,7 @@ $link-color: rgb(26, 26, 26);
   a {
     transition: all ease-in 150ms;
     color: rgba($link-color, .20);
+    font-size: 1.3rem;
     &:hover,
     &:active,
     &:visited {
