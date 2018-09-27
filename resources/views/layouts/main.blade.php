@@ -66,7 +66,7 @@
                             <ul>
                                 <li :class="{ 'is-active': (activeStep == 0) }">
                                     <p class="step-form__label">Step 1</p>
-                                    <i class="fa fa-font"></i>
+                                    <i class="fas fa-microphone-alt"></i>
                                     Express yourself
                                 </li>
                                 <li :class="[{ 'is-active': (activeStep == 1) }, 'f-2']">
@@ -93,7 +93,7 @@
                     </multi-step-form>
                 </div>
                 <aside class="tile">
-
+                    @include('aside')
                 </aside>
             </main>
         <div class='container'>
@@ -104,13 +104,9 @@
             </div>
             @endif
             <div class='row'>
-                <main role='main' class='offset-md-1 col-md-7' >
+                <main role='main' class='offset-md-1 col-md-10' >
                     @yield('content')
                 </main>
-
-                <aside class='col-md-3'>
-                    @include('aside')
-                </aside>
             </div>
         </div>
     </div>

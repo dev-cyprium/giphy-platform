@@ -12,8 +12,12 @@ $arrow-width: 30px;
       align-items: flex-start;
       li {
         flex: 1;
-        padding: 1.5em;
+        height: 80px;
+        padding: 1.3em;
         position: relative;
+        @include respond-to(tablet) {
+          font-size: 1rem;
+        }
         &.is-active + li {
           margin-left: $arrow-width;
         }
@@ -27,8 +31,8 @@ $arrow-width: 30px;
             display: block;
             position: absolute;
             content: "";
-            border-top: 44.64px solid transparent;
-            border-bottom: 44.64px solid transparent;
+            border-top: 40px solid transparent;
+            border-bottom: 40px solid transparent;
               border-left: $arrow-width solid $primary; 
             }
           }
@@ -42,7 +46,7 @@ $arrow-width: 30px;
   }
 
   &__label {
-    text-align: center;
+    color:#fafafa;
     text-transform: uppercase;
     font-weight: bolder;
   }
