@@ -33,24 +33,26 @@
     </div>
   </form>
   @else
-    <h1>{{ Auth::user()->name }}</h1>  
-    <ul>
-      <li>
-        <a href='{{ route('posts') }}'>{{ __('utils.all_gifs') }}</a>
-      </li>
-      <li>
-        <a href='{{ route('user-posts', Auth::user())}}'>{{ __('utils.my_gifs') }}</a>
-      </li>
-      <li>
-        <a href='#'>{{ __('utils.settings') }}</a>
-      </li>
-    </ul>
-    <p>Powered by <a href='https://developers.giphy.com/' target="_blank">Giphy</a></p>
-    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-primary">Logout</a>
+  <h1>{{ Auth::user()->name }}</h1>  
+  <ul>
+    <li>
+      <a href='{{ route('posts') }}'>{{ __('utils.all_gifs') }}</a>
+    </li>
+    <li>
+      <a href='{{ route('user-posts', Auth::user())}}'>{{ __('utils.my_gifs') }}</a>
+    </li>
+    <li>
+      <a href='#'>{{ __('utils.settings') }}</a>
+    </li>
+  </ul>
+  <div>
+    <p class='affix__end'>Powered by <a href='https://developers.giphy.com/' target="_blank">Giphy</a></p>
+    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="form-button">Logout</a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
-  @endauth
-  <div class="mt-3 translation-control">
-    <a href='{{ route('change-locale', 'en') }}'>en</a> // 
-    <a href='{{ route('change-locale', 'sr') }}'>sr</a>
+    @endauth
+    <div class="mt-3 translation-control">
+      <a href='{{ route('change-locale', 'en') }}'>en</a> // 
+      <a href='{{ route('change-locale', 'sr') }}'>sr</a>
+    </div>
   </div>
-<div>
+</div>
