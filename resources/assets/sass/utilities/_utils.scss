@@ -21,13 +21,19 @@ $tile-gutter: 1em;
 .tile {
   background: $tile-color;
   box-shadow: 4px 4px 10px -3px $shadow-color;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 1em;
-  &:not(:last-child) {
-    margin-right: $tile-gutter;
+  
+  @include respond-to(tablet) {
+    &:not(:last-child) {
+      margin-right: $tile-gutter;
+    }
+    &:not(:first-child) {
+      margin-left: $tile-gutter;
+    }
   }
-  &:not(:first-child) {
-    margin-left: $tile-gutter;
+  @include respond-to(desktop) {
+    font-size: 1.2rem;
   }
 }
 

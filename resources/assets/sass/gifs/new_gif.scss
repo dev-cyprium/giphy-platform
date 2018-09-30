@@ -15,9 +15,6 @@ $arrow-width: 30px;
         height: 80px;
         padding: 1.3em;
         position: relative;
-        @include respond-to(tablet) {
-          font-size: 1rem;
-        }
         &.is-active + li {
           margin-left: $arrow-width;
         }
