@@ -1,0 +1,22 @@
+.gifs {
+  min-width: 74.6%;
+}
+
+.choose-gif {
+  margin-bottom: 2.5em;
+  font-size: 1.2rem;
+  padding: 0;
+  &__title {
+    padding: .5em 1em 0;
+    font-size: 1.4rem;
+  }
+  &__group {
+    padding:1em;
+  }
+  &__desc {
+    margin-bottom: 1em;
+  }
+  &__btn {
+    margin-top: 1em;
+  }
+}

@@ -26,14 +26,15 @@
     </div>
 
     <div class="d-flex">
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" class="form-button">
           {{ __('forms.login') }}
       </button>
-      <a href="{{ route('register') }}" class="btn btn-primary ml-auto">{{ __('forms.register') }}</a>
+      <a href="{{ route('register') }}" class="form-button ml-auto">{{ __('forms.register') }}</a>
     </div>
   </form>
   @else
   <h1>{{ Auth::user()->name }}</h1>  
+  <div class="gray-border"></div>
   <ul>
     <li>
       <a href='{{ route('posts') }}'>{{ __('utils.all_gifs') }}</a>

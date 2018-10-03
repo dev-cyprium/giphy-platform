@@ -6,8 +6,7 @@ $tile-gutter: 1em;
   @include respond-to(tablet) {
     display: flex;
     max-width: 100rem;
-    margin: 0 auto;
-    margin-top: 2.5rem;
+    margin: 2.5rem auto;
     & > .tile {
       flex: 1;
     }
@@ -80,7 +79,6 @@ $tile-gutter: 1em;
   }
 }
 
-
 .affix {
   display: flex;
   justify-content: space-between;
@@ -99,4 +97,8 @@ $tile-gutter: 1em;
       margin-bottom:1rem;
     }
   }
+}
+
+.gray-border {
+  border-top: 3px solid #fafafa;
 }

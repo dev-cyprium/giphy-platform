@@ -96,17 +96,15 @@
                     @include('aside')
                 </aside>
             </main>
-        <div class='container'>
+        <div class='my-container'>
             @if($errors->has('pop_message'))
             <div class="alert alert-danger alert-dismissible fade show">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 {{ $errors->first('pop_message') }}
             </div>
             @endif
-            <div class='row'>
-                <main role='main' class='offset-md-1 col-md-10' >
+            <div class='gifs'>
                     @yield('content')
-                </main>
             </div>
         </div>
     </div>
