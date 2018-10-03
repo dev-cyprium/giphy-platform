@@ -8,10 +8,9 @@
   <new-report-modal :open-modal="activeModal" @close="activeModal = ''" ></new-report-modal>
   <delete-post-modal :manager="modalManager"></delete-post-modal>
 
-  
   @foreach($posts as $r)
-  <div class="card my-3 post">
-      <div class="card-header d-flex">
+    <div class="post">
+      <div class="post__header">
         <img class="gravatar-image" src="{{ Gravatar::get($r->user->email) }}">
         <h1>
           @if(!(isset($noLinkName) ? $noLinkName : false))
@@ -28,7 +27,7 @@
             <button class='btn btn-warning' @click="activeModal = 'new-report-modal'">Report</button>
           @endif
       </div>
-      <div class="card-body text-center">
+      <div class="post__body text-center">
         <img class='responsive-image' src="{{ $r['giphy']['image']['url'] }}">
       </div>
     </div>

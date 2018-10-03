@@ -92,7 +92,7 @@
                         </form-step>
                     </multi-step-form>
                 </div>
-                <aside class="tile">
+                <aside class="tile mleft-2">
                     @include('aside')
                 </aside>
             </main>
