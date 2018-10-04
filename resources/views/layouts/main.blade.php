@@ -96,7 +96,7 @@
                     @include('aside')
                 </aside>
             </main>
-        <div class='my-container'>
+        <div class='my-container justify-content-center'>
             @if($errors->has('pop_message'))
             <div class="alert alert-danger alert-dismissible fade show">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
