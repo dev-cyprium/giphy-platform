@@ -25,6 +25,7 @@ html,
 body {
   background: $body-bg !important;
   font-size:0.8rem;
+  overflow: hidden;
 }
 
 /* Should extract in reset.scss */
