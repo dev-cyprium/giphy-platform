@@ -5,7 +5,7 @@
     @include('gifs.new')
   @endauth
   
-  <new-report-modal :open-modal="activeModal" @close="activeModal = ''" ></new-report-modal>
+  <new-report-modal  :manager="modalManager"></new-report-modal>
   <delete-post-modal :manager="modalManager"></delete-post-modal>
 
   @foreach($posts as $r)
@@ -24,7 +24,7 @@
         @if (Auth::user() && Auth::user()->can('delete', $r))
           <button class='btn btn-danger' @click="modalManager.openModal('delete-post-modal', '{{$r['giphy_id']}}')">Delete</button>
           @else
-            <button class='btn btn-warning' @click="activeModal = 'new-report-modal'">Report</button>
+            <button class='btn btn-warning' @click="modalManager.openModal('new-report-modal', {})">Report</button>
           @endif
       </div>
       <div class="post__body text-center">

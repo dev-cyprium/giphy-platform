@@ -7,7 +7,6 @@ class ModalManager {
   openModal(modal, args = null) {
     this.activeModal = modal;
     this.activeData = args;
-    alert('yo?');
   }  
 
   getData() {

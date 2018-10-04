@@ -1,5 +1,5 @@
 <template>
-    <modal :show="'new-report-modal' === openModal" @close="close" >
+    <modal :show="manager.isModalActive('new-report-modal')" @close="close" >
         <div class="modal-header">
             <h3>Report</h3>
         </div>
@@ -35,7 +35,9 @@
 
 <script>
     export default {
-        props: ['openModal'],
+        props: {
+            manager: {required: true}
+        },
         data: function() {
             return {
                 description: '',
@@ -56,7 +58,7 @@
                 this.close();
             },
             close() {
-                this.$emit('close');
+                this.manager.close();
                 this.description = '';
                 this.charactersUsed = 0;
             },
