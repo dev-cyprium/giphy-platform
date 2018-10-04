@@ -1,0 +1,45 @@
+.gifs, .post {
+  min-width: 73.5%;
+}
+
+.tile.choose-gif {
+  margin-right: 0;
+}
+
+.choose-gif {
+  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+  padding: 0;
+  &__title {
+    padding: .5em 1em 0;
+    font-size: 1.4rem;
+  }
+  &__group {
+    padding:1em;
+  }
+  &__desc {
+    margin-bottom: 1em;
+  }
+  &__btn {
+    margin-top: 1em;
+  }
+}
+
+.post {
+  background: white;
+  margin: 2.5rem 0;
+  box-shadow: 4px 4px 10px -3px #ddd;
+  &__header {
+    padding: 1.5em;
+    background: #f2f2f2;
+    color: white;
+    display: flex !important;
+    h1 {
+      margin-bottom: 0;
+      margin-top: .5em;
+    }
+  }
+  &__body {
+    padding: 2em;
+  }
+}

@@ -65,48 +65,46 @@
                         <template slot-scope="{ activeStep }" slot="navigation">
                             <ul>
                                 <li :class="{ 'is-active': (activeStep == 0) }">
-                                    <p class="step-form__label">Step 1</p>
+
                                     <i class="fas fa-microphone-alt"></i>
                                     Express yourself
                                 </li>
                                 <li :class="[{ 'is-active': (activeStep == 1) }, 'f-2']">
-                                    <p class="step-form__label">Step 2</p>
+
                                     <i class="far fa-lightbulb"></i>
                                     Giphonize yourself
                                 </li>
                                 <li :class="{ 'is-active': (activeStep == 2) }">
-                                    <p class="step-form__label">Step 3</p>
+                                    
                                     <i class="fas fa-sticky-note"></i>
                                     Make a post
                                 </li>
                             </ul>
                         </template>
                         <form-step class="form-input">
-                            <textarea placeholder="Message..."></textarea>
+                            <textarea placeholder="Step 1: write anything!"></textarea>
                         </form-step>
                         <form-step>
-                            <p>This is step #2</p>
+                            <p>Step 2: choose a gif!</p>
                         </form-step>
                         <form-step>
-                            <p>This is step #3</p>
+                            <p>Step 3: in progress</p>
                         </form-step>
                     </multi-step-form>
                 </div>
-                <aside class="tile">
+                <aside class="tile mleft-2">
                     @include('aside')
                 </aside>
             </main>
-        <div class='container'>
+        <div class='my-container'>
             @if($errors->has('pop_message'))
             <div class="alert alert-danger alert-dismissible fade show">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
                 {{ $errors->first('pop_message') }}
             </div>
             @endif
-            <div class='row'>
-                <main role='main' class='offset-md-1 col-md-10' >
+            <div class='gifs'>
                     @yield('content')
-                </main>
             </div>
         </div>
     </div>

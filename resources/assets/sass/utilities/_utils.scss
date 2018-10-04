@@ -6,8 +6,7 @@ $tile-gutter: 1em;
   @include respond-to(tablet) {
     display: flex;
     max-width: 100rem;
-    margin: 0 auto;
-    margin-top: 2.5rem;
+    margin: 2.5rem auto;
     & > .tile {
       flex: 1;
     }
@@ -18,16 +17,29 @@ $tile-gutter: 1em;
   }  
 }
 
+.mleft-2 {
+  padding-left: 2em !important;
+  @include respond-to(desktop) {
+    padding-left: 1em !important;
+  }
+}
+
 .tile {
   background: $tile-color;
   box-shadow: 4px 4px 10px -3px $shadow-color;
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 1em;
-  &:not(:last-child) {
-    margin-right: $tile-gutter;
+  
+  @include respond-to(tablet) {
+    &:not(:last-child) {
+      margin-right: $tile-gutter;
+    }
+    &:not(:first-child) {
+      margin-left: $tile-gutter;
+    }
   }
-  &:not(:first-child) {
-    margin-left: $tile-gutter;
+  @include respond-to(desktop) {
+    font-size: 1.2rem;
   }
 }
 
@@ -72,4 +84,28 @@ $tile-gutter: 1em;
     font-size: 1.3rem;
     opacity: 0.8;
   }
+}
+
+.affix {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  ul {
+    li a {
+      font-size: 1.5rem;
+    }
+  }
+  &__end {
+    margin-bottom:1rem;
+  }
+  @include respond-to(tablet) {
+    &__end {
+      margin-top:7em;
+      margin-bottom:1rem;
+    }
+  }
+}
+
+.gray-border {
+  border-top: 3px solid #fafafa;
 }

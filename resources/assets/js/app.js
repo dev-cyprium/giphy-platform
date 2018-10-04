@@ -18,8 +18,7 @@ Vue.use(vuexI18n.plugin, store);
 
 const translationsEn = {
     giphy: {
-        title: "I'm feeling like...",
-        gif: "Giphonize yourself",
+        title: "Giphonize yourself",
         feeling: "Choose a gif that represents your feelings of the moment.",
         search: "Search Gifs",
         post: "Post"
@@ -28,8 +27,7 @@ const translationsEn = {
 
 const translationsSr = {
     giphy: {
-        title: "Osećam se kao...",
-        gif: "Izrazi se kroz Gif!",
+        title: "Izrazi se kroz Gif!",
         feeling: "Izaberi gif koji odgovora tvom raspolozenju.",
         search: "Pretraži Gifove",
         post: "Objavi"

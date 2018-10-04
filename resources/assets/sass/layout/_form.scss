@@ -56,4 +56,8 @@
     background: lighten($color: map-get($theme-colors, 'primary'), $amount: 25%);
     cursor: not-allowed;
   }
+  &:hover {
+    text-decoration: none;
+    color:white;
+  }
 }
