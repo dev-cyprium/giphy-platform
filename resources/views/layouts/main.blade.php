@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     </head>
     <body>
-        <div id='app'>
+    <div id='app'>
             <nav class="site-navigation">
                 <div class="site-navigation__header">
                     <img class="site-navigation__logo" src={{ asset('img/logo.svg') }} >
@@ -103,12 +103,13 @@
                 {{ $errors->first('pop_message') }}
             </div>
             @endif
-            <div class='gifs'>
+            <vue-scroll class="my-scroll-bar">
+                <div class='gifs'>        
                     @yield('content')
-            </div>
+                </div>
+            </vue-scroll>
         </div>
     </div>
-
     <script src="{{ asset('/js/manifest.js') }}"></script>
     <script src="{{ asset('/js/vendor.js') }}"></script>
     <script src="{{ asset('js/app.js') }}">

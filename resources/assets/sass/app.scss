@@ -21,11 +21,22 @@
 // Import everything related to GIFs
 @import "gifs/all";
 
+@import '~vue2-scrollbar/dist/style/vue2-scrollbar.css';
+
+.my-scroll-bar {
+  width: 35%;
+  max-height: 450px;
+}
+
 html,
 body {
   background: $body-bg !important;
   font-size:0.8rem;
   overflow: hidden;
+}
+
+.my-scroll {
+  min-height: 200px !important;
 }
 
 /* Should extract in reset.scss */

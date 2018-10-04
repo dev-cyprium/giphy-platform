@@ -10,6 +10,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import vuexI18n from 'vuex-i18n';
 
+import VueScroll from 'vue2-scrollbar';
+
 import modalManager from './utils/modal_manager';
 
 Vue.use(Vuex);
@@ -51,6 +53,9 @@ Vue.component('form-step', require('./components/FormStep'));
 const app = new Vue({
     store,
     el: "#app",
+    components: {
+        VueScroll
+    },  
     data: {
         activeModal: '',
         modalManager: modalManager
