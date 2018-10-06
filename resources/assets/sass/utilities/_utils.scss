@@ -28,7 +28,15 @@ $tile-gutter: 1em;
   box-shadow: 4px 4px 10px -3px $shadow-color;
   font-size: 1rem;
   padding: 1em;
-  
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-perspective: 1000;
+  -webkit-perspective: 1000;
+  perspective: 1000;
+  transform: translateZ(0);
+  transition: all ease 30ms;
+
   @include respond-to(tablet) {
     &:not(:last-child) {
       margin-right: $tile-gutter;
