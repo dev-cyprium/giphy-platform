@@ -1,10 +1,6 @@
 @extends('layouts.main')
 
 @section('content')
-  @auth
-    @include('gifs.new')
-  @endauth
-  
   <new-report-modal  :manager="modalManager"></new-report-modal>
   <delete-post-modal :manager="modalManager"></delete-post-modal>
 

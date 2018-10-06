@@ -41,7 +41,7 @@
                 </div>
             </nav>
             <main class="my-container" role="main">
-                <aside class="tile avatar">
+                <aside class="tile avatar align-self-start">
                     @auth
                         <div class="avatar__image">
                             <img src="{{ Gravatar::get(Auth::user()->email) }}" />
@@ -60,39 +60,17 @@
                         </div>
                     @endauth
                 </aside>
-                <div class="tile content">
-                    <multi-step-form class="step-form">
-                        <template slot-scope="{ activeStep }" slot="navigation">
-                            <ul>
-                                <li :class="{ 'is-active': (activeStep == 0) }">
-
-                                    <i class="fas fa-microphone-alt"></i>
-                                    Express yourself
-                                </li>
-                                <li :class="[{ 'is-active': (activeStep == 1) }, 'f-2']">
-
-                                    <i class="far fa-lightbulb"></i>
-                                    Giphonize yourself
-                                </li>
-                                <li :class="{ 'is-active': (activeStep == 2) }">
-                                    
-                                    <i class="fas fa-sticky-note"></i>
-                                    Make a post
-                                </li>
-                            </ul>
-                        </template>
-                        <form-step class="form-input">
-                            <textarea placeholder="Step 1: write anything!"></textarea>
-                        </form-step>
-                        <form-step>
-                            <p>Step 2: choose a gif!</p>
-                        </form-step>
-                        <form-step>
-                            <p>Step 3: in progress</p>
-                        </form-step>
-                    </multi-step-form>
+                <div class="content">
+                    @auth
+                    <div class="tile">
+                        @include("gifs.new")
+                    </div>
+                    @endauth
+                    <div class='gifs'>
+                        @yield('content')
+                    </div>
                 </div>
-                <aside class="tile mleft-2">
+                <aside class="tile mleft-2 align-self-start">
                     @include('aside')
                 </aside>
             </main>
@@ -103,13 +81,10 @@
                 {{ $errors->first('pop_message') }}
             </div>
             @endif
-            <vue-scroll class="my-scroll-bar">
-                <div class='gifs'>        
-                    @yield('content')
-                </div>
-            </vue-scroll>
         </div>
     </div>
+
+
     <script src="{{ asset('/js/manifest.js') }}"></script>
     <script src="{{ asset('/js/vendor.js') }}"></script>
     <script src="{{ asset('js/app.js') }}">
