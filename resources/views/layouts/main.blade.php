@@ -41,7 +41,7 @@
                 </div>
             </nav>
             <main class="my-container" role="main">
-                <sticky class-list='["tile", "avatar", "align-self-start"]'>
+                <aside class="tile avatar align-self-start">
                     @auth
                         <div class="avatar__image">
                             <img src="{{ Gravatar::get(Auth::user()->email) }}" />
@@ -59,7 +59,7 @@
                             </div>
                         </div>
                     @endauth
-                </sticky>
+                </aside>
                 <div class="content">
                     @auth
                     <div class="tile">
@@ -71,9 +71,9 @@
                     </div>
                 </div>
 
-                <sticky class-list='["tile","mleft-2","align-self-start"]'>
+                <aside class="tile mleft-2 align-self-start">
                     @include('aside')
-                </sticky>
+                </aside>
             </main>
         <div class='my-container justify-content-center'>
             @if($errors->has('pop_message'))

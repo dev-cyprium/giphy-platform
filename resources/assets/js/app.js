@@ -46,33 +46,6 @@ Vue.component('giphy-panel', require('./components/GiphyPanel'));
 Vue.component('giphy-image', require('./components/GiphyImage'))
 Vue.component('multi-step-form', require('./components/MultiStepForm'));
 Vue.component('form-step', require('./components/FormStep'));
-Vue.component('sticky', {
-    props: ['class-list'],
-    data() {
-        return {
-            lastScrollTop: window.pageYOffset,
-            deltaScroll: 0,
-            offsetTop: 0,
-            calculatedPosition: 0
-        };
-    },
-    created() {
-        window.addEventListener('scroll',() => {
-            this.deltaScroll = -(this.lastScrollTop - window.pageYOffset);
-            this.lastScrollTop = window.pageYOffset;
-
-            this.calculatedPosition += this.deltaScroll;
-        });
-    },
-    mounted() {
-        this.offsetTop = this.$el.offsetTop;
-    },
-    render(h) {
-        const { scrollTop, offsetTop } = this;
-        return h('div', {class: JSON.parse(this.classList), style: {transform: `translateY(${this.calculatedPosition}px)`}}, this.$slots.default);
-    },
-});
-
 
 const app = new Vue({
     store,
