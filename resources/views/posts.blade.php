@@ -17,14 +17,22 @@
             {{ $r->user->name }}
           @endif
         </h1>
-        @if (Auth::user() && Auth::user()->can('delete', $r))
-          <button class='btn btn-danger' @click="modalManager.openModal('delete-post-modal', '{{$r['giphy_id']}}')">Delete</button>
-          @else
-            <button class='btn btn-warning' @click="modalManager.openModal('new-report-modal', {})">Report</button>
-          @endif
       </div>
       <div class="post__body text-center">
         <img class='responsive-image' src="{{ $r['giphy']['image']['url'] }}">
+      </div>
+      <div class="post__controlls">
+       @if (Auth::user() && Auth::user()->can('delete', $r))
+       <a href='#' @click.prevent="modalManager.openModal('delete-post-modal', '{{$r['giphy_id']}}')">
+          Delete
+          <i class="fas fa-exclamation-triangle"></i>
+        </a>
+        @else
+        <a href='#' @click.prevent="modalManager.openModal('new-report-modal', {})">
+          Report
+          <i class="fas fa-exclamation-triangle"></i>
+        </a>
+        @endif
       </div>
     </div>
     @endforeach 
