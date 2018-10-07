@@ -50,28 +50,26 @@ Vue.component('sticky', {
     props: ['class-list'],
     data() {
         return {
-            scrollTop: window.pageYOffset,
-            offsetTop: 0
+            lastScrollTop: window.pageYOffset,
+            deltaScroll: 0,
+            offsetTop: 0,
+            calculatedPosition: 0
         };
     },
     created() {
         window.addEventListener('scroll',() => {
-            this.scrollTop = window.pageYOffset;
+            this.deltaScroll = -(this.lastScrollTop - window.pageYOffset);
+            this.lastScrollTop = window.pageYOffset;
+
+            this.calculatedPosition += this.deltaScroll;
         });
     },
     mounted() {
         this.offsetTop = this.$el.offsetTop;
     },
-    computed: {
-        calculated() {
-            if(this.scrollTop <= this.offsetTop) return 0;
-            
-            return (this.scrollTop - this.offsetTop) + 20;
-        }
-    },
     render(h) {
         const { scrollTop, offsetTop } = this;
-        return h('div', {class: JSON.parse(this.classList), style: {transform: `translateY(${this.calculated}px)`}}, this.$slots.default);
+        return h('div', {class: JSON.parse(this.classList), style: {transform: `translateY(${this.calculatedPosition}px)`}}, this.$slots.default);
     },
 });
 

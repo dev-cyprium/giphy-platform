@@ -35,7 +35,7 @@ $tile-gutter: 1em;
   -webkit-perspective: 1000;
   perspective: 1000;
   transform: translateZ(0);
-  transition: all ease 30ms;
+  // transition: all ease 30ms;
 
   @include respond-to(tablet) {
     &:not(:last-child) {

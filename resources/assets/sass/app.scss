@@ -27,6 +27,14 @@ body {
   font-size:0.8rem;
 }
 
+[v-cloak] > * {
+  display: none;
+}
+
+[v-cloak]::before {
+  content: "loading app...";
+}
+
 .my-scroll {
   min-height: 200px !important;
 }
