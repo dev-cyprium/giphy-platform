@@ -1,12 +1,9 @@
-<!--
-<giphy-panel></giphy-panel>
--->
 <multi-step-form class="step-form">
     <template slot-scope="{ activeStep }" slot="navigation">
         <ul>
             <li :class="{ 'is-active': (activeStep == 0) }">
                 <i class="fas fa-microphone-alt"></i>
-                Express yourself
+                {{ __("forms.giphy.express") }}
             </li>
             <li :class="[{ 'is-active': (activeStep == 1) }, 'f-2']">
 
@@ -24,7 +21,7 @@
         <textarea placeholder="Step 1: write anything!"></textarea>
     </form-step>
     <form-step>
-        <p>Step 2: choose a gif!</p>
+        <giphy-panel></giphy-panel>
     </form-step>
     <form-step>
         <p>Step 3: in progress</p>

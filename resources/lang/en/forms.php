@@ -7,5 +7,8 @@
     'name'     => 'Name',
     'email'    => 'Email',
     'password' => 'Password',
-    'confirm_password' => 'Confirm Password'
+    'confirm_password' => 'Confirm Password',
+    'giphy' => [
+      'express' => 'Express yourself'
+    ]
   ];

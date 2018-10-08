@@ -6,5 +6,8 @@
     'name'     => 'Ime',
     'email'    => 'Mail',
     'password' => 'Lozinka',
-    'confirm_password' => 'Potrvda Lozinke'
+    'confirm_password' => 'Potrvda Lozinke',
+    'giphy' => [
+      'express' => 'Izrazi se'
+    ]
   ];
