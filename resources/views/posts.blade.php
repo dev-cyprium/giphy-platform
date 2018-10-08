@@ -17,6 +17,7 @@
             {{ $r->user->name }}
           @endif
         </h1>
+        <h2>5 days ago</h2>
       </div>
       <div class="post__body text-center">
         <img class='responsive-image' src="{{ $r['giphy']['image']['url'] }}">
