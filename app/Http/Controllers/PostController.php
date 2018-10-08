@@ -27,6 +27,7 @@ class PostController extends Controller
     {
         $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(self::PER_PAGE);
         $this->addGiphyToPosts($posts, $service);
+        $this->calculateDateString($posts);
         return view("posts", compact('posts'));
     }
 
@@ -54,6 +55,12 @@ class PostController extends Controller
     {
         foreach($posts as $post) {
             $post->giphy = $service->getByID($post->giphy_id);
+        }
+    }
+
+    private function calculateDateString($posts) {
+        foreach($posts as $post) {
+            $post->display_time = $post->created_at->diffForHumans();
         }
     }
 }

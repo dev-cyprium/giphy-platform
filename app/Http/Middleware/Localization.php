@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Session;
 use Closure;
 use App;
 
+use Carbon\Carbon;
+
 class Localization
 {
     /**
@@ -19,6 +21,7 @@ class Localization
     {
         if(Session::has('locale')) {
             App::setLocale(Session::get('locale'));
+            Carbon::setLocale(Session::get('locale'));
         }
         return $next($request);
     }
