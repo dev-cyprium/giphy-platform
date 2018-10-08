@@ -23,16 +23,17 @@
         <img class='responsive-image' src="{{ $r['giphy']['image']['url'] }}">
       </div>
       <div class="post__controlls">
+        <a href='#' @click.prevent class="post__icon">
+          <i class="fas fa-thumbs-up"></i>
+        </a>
        @if (Auth::user() && Auth::user()->can('delete', $r))
-       <a href='#' @click.prevent="modalManager.openModal('delete-post-modal', '{{$r['giphy_id']}}')">
-          Delete
-          <i class="fas fa-exclamation-triangle"></i>
-        </a>
+          <a href='#' class="post__icon" @click.prevent="modalManager.openModal('delete-post-modal', '{{$r['giphy_id']}}')">
+            <i class="fa fa-trash"></i>
+          </a>
         @else
-        <a href='#' @click.prevent="modalManager.openModal('new-report-modal', {})">
-          Report
-          <i class="fas fa-exclamation-triangle"></i>
-        </a>
+          <a href='#' class="post__icon" @click.prevent="modalManager.openModal('new-report-modal', {})">
+            <i class="fas fa-exclamation-triangle"></i>
+          </a>
         @endif
       </div>
     </div>
