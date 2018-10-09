@@ -23,7 +23,10 @@
         <img class='responsive-image' src="{{ $r['giphy']['image']['url'] }}">
       </div>
       <div class="post__controlls">
-        <a href='#' @click.prevent class="post__icon">
+        <a href='#' :class="[{'post__icon--shake': likeShaking},'post__icon']" 
+          @click.prevent="likeShaking = true" 
+          @animationend="likeShaking = false"
+        >
           <i class="fas fa-thumbs-up"></i>
         </a>
        @if (Auth::user() && Auth::user()->can('delete', $r))

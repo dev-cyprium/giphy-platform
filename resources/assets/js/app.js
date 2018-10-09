@@ -51,8 +51,9 @@ const app = new Vue({
     store,
     el: "#app",
     data: {
+        likeShaking: false,
         activeModal: '',
-        modalManager: modalManager
+        modalManager: modalManager,
     }
 });
 

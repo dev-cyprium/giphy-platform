@@ -52,4 +52,24 @@
     font-size: 2rem;
     padding: .5em;
   }
+
+  &__icon--shake {
+    animation-name: shake;
+    animation-duration: 750ms;
+  }
+}
+
+$shaken: 5deg;
+@keyframes shake {
+  0%  { transform:  rotate(0); }  
+  10%  { transform: rotate($shaken);   }
+  20%  { transform: rotate(-$shaken);  }
+  30%  { transform: rotate($shaken);   }
+  40%  { transform: rotate(-$shaken);  }
+  50%  { transform:  rotate($shaken);  } 
+  60%  { transform: rotate(-$shaken);  }
+  70%  { transform: rotate($shaken);   }
+  80%  { transform: rotate(-$shaken);  }
+  90%  { transform: rotate($shaken);   }
+  100% { transform: rotate(0); }
 }
