@@ -46,12 +46,13 @@ Vue.component('giphy-panel', require('./components/GiphyPanel'));
 Vue.component('giphy-image', require('./components/GiphyImage'))
 Vue.component('multi-step-form', require('./components/MultiStepForm'));
 Vue.component('form-step', require('./components/FormStep'));
+Vue.component('responsive-image', require('./components/ResponsiveImage'));
+Vue.component('giphy-post', require('./components/GiphyPost'));
 
 const app = new Vue({
     store,
     el: "#app",
     data: {
-        likeShaking: false,
         activeModal: '',
         modalManager: modalManager,
     }

@@ -5,6 +5,7 @@
   <delete-post-modal :manager="modalManager"></delete-post-modal>
 
   @foreach($posts as $r)
+  <giphy-post inline-template>
     <div class="post">
       <div class="post__header">
         <img class="gravatar-image" src="{{ Gravatar::get($r->user->email) }}">
@@ -20,7 +21,7 @@
         <h2>{{ $r->display_time }}</h2>
       </div>
       <div class="post__body text-center">
-        <img class='responsive-image' src="{{ $r['giphy']['image']['url'] }}">
+        <responsive-image url="{{ $r['giphy']['image']['url'] }}" ></responsive-image>
       </div>
       <div class="post__controlls">
         <a href='#' :class="[{'post__icon--shake': likeShaking},'post__icon']" 
@@ -40,6 +41,7 @@
         @endif
       </div>
     </div>
+    </giphy-post>   
     @endforeach 
   {{ $posts->links() }}
 @endsection
