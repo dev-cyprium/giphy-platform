@@ -18,7 +18,9 @@
         </ul>
     </template>
     <form-step class="form-input">
-        <textarea placeholder="Step 1: write anything!"></textarea>
+        <div slot-scope="{d, mutator}">
+            <textarea :value="d" @input="ev => mutator(ev.target.value)" placeholder="Step 1: write anything! "></textarea>
+        </div>
     </form-step>
     <form-step>
         <giphy-panel></giphy-panel>

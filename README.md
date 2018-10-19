@@ -34,4 +34,25 @@ To start the development process:
   - Run the laravel server ( `php artisan serve` )
   - Run the node watcher ( `yarn watch` )
   - (Optional) Run tinker ( `php artisan ti` )
-  
+ 
+
+### Setting up automatic git sync
+deployer@giphy-droplet:~/giphy.git/hooks$ cat post-receive
+```bash
+#!/bin/bash
+LIVE="... path to site"
+
+read oldrev newrev refname
+if [ $refname = "refs/heads/master" ]; then
+	echo "==== DEPLOYING TO LIVE SITE ===="
+	echo "--------------------------------"
+	echo "----    Digital ocean VPS   ----"
+	echo "--------------------------------"
+	unset GIT_DIR
+	cd $LIVE
+	git fetch --all
+	git reset --hard origin/master
+	git pull origin master
+	echo "==== FINISHED ===="
+fi
+```

@@ -6,7 +6,10 @@
 
     <slot></slot>
 
-    <button class="form-button" @click="selectTab()">
+    <button class="form-button" @click="prevTab()">
+      Previous
+    </button>
+    <button class="form-button" @click="nextTab()">
       Next
     </button>
   </div>
@@ -27,7 +30,14 @@ export default {
     this.sync();
   },
   methods: {
-    selectTab() {
+    prevTab() {
+      this.activeStep--;
+      if(this.activeStep < 0) {
+        this.activeStep = 0;
+      }
+      this.sync();
+    },
+    nextTab() {
       this.activeStep++;
       if(this.activeStep > this.steps.length - 1) {
         this.activeStep = 0;
