@@ -8,6 +8,7 @@
     'password' => 'Lozinka',
     'confirm_password' => 'Potrvda Lozinke',
     'giphy' => [
-      'express' => 'Izrazi se'
+      'express' => 'Izrazi se',
+      'placeholder' => 'Korak 1: napiši bilo šta!'
     ]
   ];

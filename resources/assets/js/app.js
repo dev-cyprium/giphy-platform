@@ -23,6 +23,10 @@ const translationsEn = {
         post: "Post",
         select: "Selected image: ",
         noselect: "No Image selected"
+    },
+    button: {
+        next: 'Next',
+        prev: 'Previous'
     }
 };
 
@@ -34,6 +38,10 @@ const translationsSr = {
         post: "Objavi",
         select: "Izaberi sliku: ",
         noselect: "Nije odabrana slika"
+    },
+    button: {
+        next: 'Sledeći',
+        prev: 'Prethodni'
     }
 };
 

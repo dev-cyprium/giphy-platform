@@ -7,10 +7,10 @@
     <slot :mutator="mutate" :d="activeStepData"></slot>
 
     <button class="form-button" @click="prevTab()">
-      Previous
+      {{ $t("button.next") }}
     </button>
     <button class="form-button" @click="nextTab()" :disabled="!activeStepData">
-      Next
+      {{ $t("button.prev") }}
     </button>
   </div>
 </template>

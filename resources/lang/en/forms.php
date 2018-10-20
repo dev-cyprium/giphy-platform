@@ -9,6 +9,7 @@
     'password' => 'Password',
     'confirm_password' => 'Confirm Password',
     'giphy' => [
-      'express' => 'Express yourself'
+      'express'     => 'Express yourself',
+      'placeholder' => 'Step 1: write anything!'
     ]
   ];

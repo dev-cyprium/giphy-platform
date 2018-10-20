@@ -20,7 +20,7 @@
 
     <template slot-scope="{mutator, d}">
         <form-step class="form-input">
-            <textarea :value="d" @input="ev => mutator(ev.target.value)" placeholder="Step 1: write anything! "></textarea>
+            <textarea :value="d" @input="ev => mutator(ev.target.value)" placeholder="{{ __('forms.giphy.placeholder') }}"></textarea>
         </form-step>
         <form-step>
             <giphy-panel @change="data => mutator(data)"></giphy-panel>
