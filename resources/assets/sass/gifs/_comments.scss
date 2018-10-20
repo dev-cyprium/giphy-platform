@@ -1,10 +1,20 @@
 .post-comment {
   font-size: 1.2rem;
-  padding: .6em .33em;
+  padding: .15em .33em;
   &__user {
     font-size: 1.3rem;
     margin-left: .5em;
     font-weight: bold;
     color: $primary;
+  }
+}
+
+.post-comment-form {
+  margin-top: .5em;
+  &__input {
+    font-size: 1.4rem;
+    width: 100%;
+    border: none;
+    padding: .5em 1em;
   }
 }

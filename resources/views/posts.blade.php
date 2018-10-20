@@ -44,9 +44,21 @@
         @endif
       </div>
       <div class="gray-border"></div>
-      <div class="post-comment">
-          <span class="post-comment__user">{{ $r->user->name }}&nbsp;</span>
-          I don't think it should be the way it is.
+      <div class="post-comments">
+        <div class="post-comment">
+            <span class="post-comment__user">{{ $r->user->name }}&nbsp;</span>
+            I don't think it should be the way it is.
+        </div>
+        <div class="post-comment">
+            <span class="post-comment__user">Mr. tester&nbsp;</span>
+            I'd like to vaugly argue against your point.
+        </div>
+      </div>
+      <div class="gray-border"></div>
+      <div class="post-comment-form">
+        <form>
+          <input class="post-comment-form__input" type="text" placeholder="Comment...">
+        </form>
       </div>
     </div>
     </giphy-post>   
