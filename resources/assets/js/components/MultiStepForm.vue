@@ -4,12 +4,12 @@
       <slot name="navigation" :active-step="activeStep"></slot>
     </nav>
 
-    <slot></slot>
+    <slot :mutator="mutate" :d="activeStepData"></slot>
 
     <button class="form-button" @click="prevTab()">
       Previous
     </button>
-    <button class="form-button" @click="nextTab()">
+    <button class="form-button" @click="nextTab()" :disabled="!activeStepData">
       Next
     </button>
   </div>
@@ -20,7 +20,8 @@ export default {
   data() {
    return {
      activeStep: 0,
-     steps: []
+     steps: [],
+     filledData: []
    } 
   },
   created() {
@@ -28,6 +29,16 @@ export default {
   },
   mounted() {
     this.sync();
+    this.steps.forEach((_, i) => this.filledData.push({step: i, userData: ""}));
+  },
+  computed: {
+    activeStepData() {
+     if(this.filledData.length > 0) {
+       const { userData } = this.filledData[this.activeStep];
+       return userData;
+     }
+     return "";
+    }
   },
   methods: {
     prevTab() {
@@ -47,6 +58,9 @@ export default {
     sync() {
       this.steps.forEach((step, i) => i === this.activeStep ? 
         step.shown = true : step.shown = false);
+    },
+    mutate(nextData) {
+      this.filledData[this.activeStep].userData = nextData;
     }
   }
 }

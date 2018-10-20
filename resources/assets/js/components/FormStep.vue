@@ -1,6 +1,6 @@
 <template>
   <div v-show="shown">
-    <slot :d="textData" :mutator="mutator"></slot>
+    <slot></slot>
   </div>
 </template>
 
@@ -9,12 +9,6 @@ export default {
   data() {
     return {
       shown: false,
-      textData: ''
-    }
-  },
-  methods: {
-    mutator(newTextData) {
-      this.textData = newTextData;
     }
   }
 }

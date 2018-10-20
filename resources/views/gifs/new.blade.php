@@ -17,17 +17,16 @@
             </li>
         </ul>
     </template>
-    <form-step class="form-input">
-        <div slot-scope="{d, mutator}">
+
+    <template slot-scope="{mutator, d}">
+        <form-step class="form-input">
             <textarea :value="d" @input="ev => mutator(ev.target.value)" placeholder="Step 1: write anything! "></textarea>
-        </div>
-    </form-step>
-    <form-step>
-        <div slot-scope="{d, mutator}">
+        </form-step>
+        <form-step>
             <giphy-panel @change="data => mutator(data)"></giphy-panel>
-        </div>
-    </form-step>
-    <form-step>
-        <p>Step 3: in progress</p>
-    </form-step>
+        </form-step>
+        <form-step >
+            <p>Step 3: in progress</p>
+        </form-step>
+    </template>
 </multi-step-form>
