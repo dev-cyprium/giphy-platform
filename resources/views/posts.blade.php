@@ -5,7 +5,7 @@
   <delete-post-modal :manager="modalManager"></delete-post-modal>
 
   @foreach($posts as $r)
-  <giphy-post inline-template>
+  <giphy-post :modal-manager="modalManager" inline-template>
     <div class="post">
       <div class="post__header">
         <img class="gravatar-image" src="{{ Gravatar::get($r->user->email) }}">

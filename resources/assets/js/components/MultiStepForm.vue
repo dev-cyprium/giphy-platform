@@ -7,10 +7,10 @@
     <slot :mutator="mutate" :d="activeStepData"></slot>
 
     <button class="form-button" @click="prevTab()">
-      {{ $t("button.next") }}
-    </button>
-    <button class="form-button" @click="nextTab()" :disabled="!activeStepData">
       {{ $t("button.prev") }}
+    </button>
+    <button class="form-button" @click="nextTab()" :disabled="!(activeStepData || lastStep())">
+      {{ nextButtonText }}
     </button>
   </div>
 </template>
@@ -38,9 +38,24 @@ export default {
        return userData;
      }
      return "";
+    },
+    nextButtonText() {
+      if(this.lastStep()) {
+        return this.$t("button.finish");
+      }
+      return  this.$t("button.next");
     }
   },
   methods: {
+    reset() {
+      this.activeStep = 0;
+      this.filledData = [];
+      this.steps.forEach((_, i) => this.filledData.push({step: i, userData: ""}));
+      this.sync();
+    },
+    lastStep() {
+      return this.steps.length-1 == this.activeStep
+    },
     prevTab() {
       this.activeStep--;
       if(this.activeStep < 0) {
@@ -49,6 +64,11 @@ export default {
       this.sync();
     },
     nextTab() {
+      if(this.lastStep()) {
+        this.reset();
+        return;
+      }
+
       this.activeStep++;
       if(this.activeStep > this.steps.length - 1) {
         this.activeStep = 0;

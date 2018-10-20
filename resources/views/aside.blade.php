@@ -47,7 +47,7 @@
     </li>
   </ul>
   <div>
-    <p class='affix__end'>Powered by <a href='https://developers.giphy.com/' target="_blank">Giphy</a></p>
+    <p class='affix__end'>{{ __('utils.powered') }} <a href='https://developers.giphy.com/' target="_blank">Giphy</a></p>
     <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="form-button">Logout</a>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
     @endauth

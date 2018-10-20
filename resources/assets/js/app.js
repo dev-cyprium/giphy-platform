@@ -26,7 +26,8 @@ const translationsEn = {
     },
     button: {
         next: 'Next',
-        prev: 'Previous'
+        prev: 'Previous',
+        finish: 'Finish'
     }
 };
 
@@ -41,7 +42,8 @@ const translationsSr = {
     },
     button: {
         next: 'Sledeći',
-        prev: 'Prethodni'
+        prev: 'Prethodni',
+        finish: 'Gotovo'
     }
 };
 

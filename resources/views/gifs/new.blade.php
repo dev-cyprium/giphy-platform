@@ -26,7 +26,7 @@
             <giphy-panel @change="data => mutator(data)"></giphy-panel>
         </form-step>
         <form-step >
-            <p>Step 3: in progress</p>
+            <h1>PLACEHOLDER POST PREVIEW</h1>
         </form-step>
     </template>
 </multi-step-form>
