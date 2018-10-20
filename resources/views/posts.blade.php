@@ -20,6 +20,9 @@
         </h1>
         <h2>{{ $r->display_time }}</h2>
       </div>
+      <div class="post__description">
+        <p>The description of this post must be a cool description</p>
+      </div>
       <div class="post__body text-center">
         <responsive-image url="{{ $r['giphy']['image']['url'] }}" ></responsive-image>
       </div>
@@ -39,6 +42,11 @@
             <i class="fas fa-exclamation-triangle"></i>
           </a>
         @endif
+      </div>
+      <div class="gray-border"></div>
+      <div class="post-comment">
+          <span class="post-comment__user">{{ $r->user->name }}&nbsp;</span>
+          I don't think it should be the way it is.
       </div>
     </div>
     </giphy-post>   

@@ -52,7 +52,11 @@
     font-size: 2rem;
     padding: .5em;
   }
-
+  &__description {
+    font-size: 1.35rem;
+    padding: 1em 0;
+    padding-left: 1.2em;
+  }
   &__icon--shake {
     animation-name: shake;
     animation-duration: 750ms;
