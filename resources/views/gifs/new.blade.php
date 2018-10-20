@@ -23,7 +23,9 @@
         </div>
     </form-step>
     <form-step>
-        <giphy-panel></giphy-panel>
+        <div slot-scope="{d, mutator}">
+            <giphy-panel @change="data => mutator(data)"></giphy-panel>
+        </div>
     </form-step>
     <form-step>
         <p>Step 3: in progress</p>

@@ -20,7 +20,9 @@ const translationsEn = {
         title: "Giphonize yourself",
         feeling: "Choose a gif that represents your feelings of the moment.",
         search: "Search Gifs",
-        post: "Post"
+        post: "Post",
+        select: "Selected image: ",
+        noselect: "No Image selected"
     }
 };
 
@@ -29,7 +31,9 @@ const translationsSr = {
         title: "Izrazi se kroz Gif!",
         feeling: "Izaberi gif koji odgovora tvom raspolozenju.",
         search: "Pretraži Gifove",
-        post: "Objavi"
+        post: "Objavi",
+        select: "Izaberi sliku: ",
+        noselect: "Nije odabrana slika"
     }
 };
 
