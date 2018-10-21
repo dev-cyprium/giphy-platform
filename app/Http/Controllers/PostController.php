@@ -25,7 +25,7 @@ class PostController extends Controller
 
     public function index(GiphyService $service)
     {
-        $posts = Post::with('user')->orderBy('created_at', 'desc')->paginate(self::PER_PAGE);
+        $posts = Post::with(['user', 'comments'])->orderBy('created_at', 'desc')->paginate(self::PER_PAGE);
         $this->addGiphyToPosts($posts, $service);
         $this->calculateDateString($posts);
         return view("posts", compact('posts'));

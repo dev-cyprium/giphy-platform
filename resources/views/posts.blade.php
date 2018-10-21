@@ -45,14 +45,17 @@
       </div>
       <div class="gray-border"></div>
       <div class="post-comments">
-        <div class="post-comment">
-            <span class="post-comment__user">{{ $r->user->name }}&nbsp;</span>
-            I don't think it should be the way it is.
-        </div>
-        <div class="post-comment">
-            <span class="post-comment__user">Mr. tester&nbsp;</span>
-            I'd like to vaugly argue against your point.
-        </div>
+          @if ($r->comments->count() == 0)
+            <div class="post-comment post-comment--empty">
+              No comments just yet.
+            </div>
+          @endif
+          @foreach($r->comments as $comment)
+            <div class="post-comment">
+                <span class="post-comment__user">{{ $comment->user->name }}&nbsp;</span>
+                {{ $comment->text }}
+            </div>
+          @endforeach
       </div>
       <div class="gray-border"></div>
       <div class="post-comment-form">
