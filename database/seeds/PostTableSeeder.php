@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\User;
-
+use App\Post;
 class PostTableSeeder extends Seeder
 {
     /**
@@ -13,6 +13,8 @@ class PostTableSeeder extends Seeder
      */
     public function run()
     {
+    
+        $faker = Faker\Factory::create();
         foreach($this->tableData() as $giphy_id) {
             DB::table('posts')->insert([
                 "giphy_id" => $giphy_id,
@@ -20,6 +22,14 @@ class PostTableSeeder extends Seeder
                 "created_at" =>  \Carbon\Carbon::now(),
                 "updated_at" => \Carbon\Carbon::now(),
             ]);
+        }
+
+        foreach(Post::all() as $post) {
+            $numberOfComments = rand(0, 5);
+            for($i=0; $i < $numberOfComments; $i++) {
+                $user = User::all()->random();
+                $post->addComment($user, $faker->realText(50));
+            }
         }
     }
 
