@@ -10,5 +10,8 @@
     'giphy' => [
       'express' => 'Izrazi se',
       'placeholder' => 'Korak 1: napiši bilo šta!'
+    ],
+    'comment' => [
+      'new' => 'Ostavite komentar...'
     ]
   ];

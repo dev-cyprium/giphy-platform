@@ -47,7 +47,7 @@
       <div class="post-comments">
           @if ($r->comments->count() == 0)
             <div class="post-comment post-comment--empty">
-              No comments just yet.
+              {{ __('utils.no_comments') }}
             </div>
           @endif
           @foreach($r->comments as $comment)
@@ -60,7 +60,7 @@
       <div class="gray-border"></div>
       <div class="post-comment-form">
         <form>
-          <input class="post-comment-form__input" type="text" placeholder="Comment...">
+          <input class="post-comment-form__input" type="text" placeholder="{{ __('forms.comment.new') }}">
         </form>
       </div>
     </div>

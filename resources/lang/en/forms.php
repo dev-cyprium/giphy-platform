@@ -11,5 +11,8 @@
     'giphy' => [
       'express'     => 'Express yourself',
       'placeholder' => 'Step 1: write anything!'
+    ],
+    'comment' => [
+      'new' => 'Comment...'
     ]
   ];
