@@ -165,6 +165,7 @@ return [
          */
         App\Providers\GiphyServiceProvider::class,
         App\Providers\GravatarServiceProvider::class,
+        App\Providers\DebugerServiceProvider::class,
     ],
 
     /*
@@ -213,6 +214,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Gravatar' => App\Facades\Gravatar::class
+        'Gravatar' => App\Facades\Gravatar::class,
+        'Debuger'  => App\Facades\Debuger::class,
     ],
 ];
