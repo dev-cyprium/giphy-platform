@@ -59,9 +59,7 @@
       </div>
       <div class="gray-border"></div>
       <div class="post-comment-form">
-        <form>
-          <input class="post-comment-form__input" type="text" placeholder="{{ __('forms.comment.new') }}">
-        </form>
+        <comment />
       </div>
     </div>
     </giphy-post>   

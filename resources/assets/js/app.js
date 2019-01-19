@@ -28,6 +28,9 @@ const translationsEn = {
         next: 'Next',
         prev: 'Previous',
         finish: 'Finish'
+    },
+    comments: {
+        new: "Comment..."
     }
 };
 
@@ -44,6 +47,9 @@ const translationsSr = {
         next: 'Sledeći',
         prev: 'Prethodni',
         finish: 'Gotovo'
+    },
+    comments: {
+        new: "Ostavite komentar..."
     }
 };
 
@@ -62,6 +68,7 @@ Vue.component('multi-step-form', require('./components/MultiStepForm'));
 Vue.component('form-step', require('./components/FormStep'));
 Vue.component('responsive-image', require('./components/ResponsiveImage'));
 Vue.component('giphy-post', require('./components/GiphyPost'));
+Vue.component('comment', require('./components/Comment'));
 
 const app = new Vue({
     store,
