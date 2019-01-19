@@ -19,5 +19,21 @@
     width: 100%;
     border: none;
     padding: .5em 1em;
+    &--danger {
+      border-bottom: 1px solid crimson;
+    }
+  }
+  &__count-wrap {
+    position: relative;
+  }
+  &__number {
+    position: absolute;
+    top: 50%;
+    right: .75em;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    &--danger {
+      color: crimson;
+    }
   }
 }
