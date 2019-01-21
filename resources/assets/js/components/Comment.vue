@@ -23,7 +23,10 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
+  props: ['post-id'],
   data() {
     return {
       char_left: 50,
@@ -40,6 +43,10 @@ export default {
       }
     },
     handleFormSubmit() {
+      // http://localhost:8000/api/post/2/comment/create
+      axios.post(`/api/post/${this.postId}/comment/create`, {
+        text: this.comment
+      });
       this.comment = '';
       this.char_left = 50;
     }

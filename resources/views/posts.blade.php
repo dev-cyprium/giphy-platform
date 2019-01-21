@@ -59,7 +59,7 @@
       </div>
       <div class="gray-border"></div>
       <div class="post-comment-form">
-        <comment />
+        <comment :post-id="{{ $r->id }}" />
       </div>
     </div>
     </giphy-post>   
