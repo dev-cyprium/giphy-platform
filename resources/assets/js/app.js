@@ -76,6 +76,21 @@ const app = new Vue({
     data: {
         activeModal: '',
         modalManager: modalManager,
+    },
+    methods: {
+        handleLastStep(filledMultistepData) {
+            const content = filledMultistepData[0].userData;
+            const giphyId = filledMultistepData[1].userData;
+            var body = {
+                giphy_id: giphyId,
+                // content: "" TODO: add content to the API
+            };
+
+            axios.post('/api/post/create', body).then(resp => {
+                console.log(resp);
+                window.location.reload(true);
+            });
+        }
     }
 });
 

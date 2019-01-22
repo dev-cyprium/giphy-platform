@@ -1,4 +1,4 @@
-<multi-step-form class="step-form">
+<multi-step-form class="step-form" @submit="handleLastStep">
     <template slot-scope="{ activeStep }" slot="navigation">
         <ul>
             <li :class="{ 'is-active': (activeStep == 0) }">

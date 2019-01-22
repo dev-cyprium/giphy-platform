@@ -65,6 +65,7 @@ export default {
     },
     nextTab() {
       if(this.lastStep()) {
+        this.$emit('submit', this.filledData);
         this.reset();
         return;
       }
